@@ -15,7 +15,7 @@ const dict = {
         aboutTitle: "Tu esencia, expresada",
         aboutP1: "Aquí no solo hacemos cortes de pelo; creamos experiencias adaptadas a tu energía. Diana lidera este proyecto con una visión libre y creativa, guiada por la intuición para encontrar el estilo que realmente habla de ti.",
         aboutP2: "Sumérgete en un ambiente lleno de arte, plantas, butacas vintage y buenas vibras. Un pequeño oasis para relajarte, conversar y renovar tu estilo.",
-        aboutP3: "Además, Área 9 es un espacio vivo: de vez en cuando organizamos eventos, obras de teatro y talleres de aromaterapia. ¡Sigue nuestro Instagram para no perderte nada!",
+        aboutP3: "Además, Área 9 es un espacio vivo: de vez en cuando organizamos diferentes talleres y eventos. ¡Sigue nuestro Instagram para no perderte nada!",
 
         // Schedule
         scheduleTitle: "Horarios",
@@ -52,7 +52,7 @@ const dict = {
         aboutTitle: "Your essence, expressed",
         aboutP1: "We don't just cut hair here; we create experiences tailored to your energy. Diana leads this project with a free and creative vision, guided by intuition to find the style that truly speaks to you.",
         aboutP2: "Immerse yourself in an environment filled with art, plants, vintage chairs, and good vibes. A small oasis to relax, chat, and renew your style.",
-        aboutP3: "Additionally, Área 9 is a living space: we occasionally host events, theater plays, and aromatherapy workshops. Follow our Instagram to stay updated!",
+        aboutP3: "Additionally, Área 9 is a living space: we occasionally host different workshops and events. Follow our Instagram to stay updated!",
 
         // Schedule
         scheduleTitle: "Schedule",
