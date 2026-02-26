@@ -28,7 +28,6 @@ const dict = {
         // Contact
         contactTitle: "Encuéntranos",
         contactDesc: "Ubicados en el corazón de Madrid.",
-        mapLink: "Ver en Google Maps",
 
         // Reviews
         reviewsTitle: "Lo que dicen de nosotros",
@@ -66,7 +65,6 @@ const dict = {
         // Contact
         contactTitle: "Find Us",
         contactDesc: "Located in the heart of Madrid.",
-        mapLink: "View on Google Maps",
 
         // Reviews
         reviewsTitle: "What people say",
