@@ -459,6 +459,39 @@ img {
     margin-top: var(--space-md);
 }
 
+.review-more-text {
+    display: none;
+}
+
+.review-card.expanded .review-more-text {
+    display: inline;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.read-more-btn:hover {
+    color: var(--primary-hover);
+}
+
+.review-card.expanded .read-more-btn {
+    /* Optionally hidden, or we can use JS to change text to 'Read less' later, 
+       but for now we'll just hide it once expanded to keep it simple, 
+       or let it disappear. */
+    display: none;
+}
+
 /* ==========================================================================
    Gallery Masonry
    ========================================================================== */
