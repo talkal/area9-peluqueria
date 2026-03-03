@@ -32,6 +32,7 @@ const dict = {
         // Reviews
         reviewsTitle: "Lo que dicen de nosotros",
         readMore: "Leer más...",
+        readLess: "Leer menos...",
 
         // Gallery
         galleryTitle: "Nuestras Creaciones",
@@ -70,6 +71,7 @@ const dict = {
         // Reviews
         reviewsTitle: "What people say",
         readMore: "Read more...",
+        readLess: "Read less...",
 
         // Gallery
         galleryTitle: "Our Creations",

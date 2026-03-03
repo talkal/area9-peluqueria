@@ -485,11 +485,16 @@ img {
     color: var(--primary-hover);
 }
 
-.review-card.expanded .read-more-btn {
-    /* Optionally hidden, or we can use JS to change text to 'Read less' later, 
-       but for now we'll just hide it once expanded to keep it simple, 
-       or let it disappear. */
+.read-more-btn .text-less {
     display: none;
+}
+
+.review-card.expanded .read-more-btn .text-more {
+    display: none;
+}
+
+.review-card.expanded .read-more-btn .text-less {
+    display: inline;
 }
 
 /* ==========================================================================
