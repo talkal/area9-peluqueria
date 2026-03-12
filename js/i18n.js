@@ -8,7 +8,7 @@ const dict = {
         bookBtn: "Ven a visitarnos",
 
         // Hero
-        heroTitle: "Sabemos lo que te sienta bien",
+        heroTitle: "Esculpimos tu pelo",
         heroSubtitle: "Un espacio intuitivo donde la belleza se encuentra con la paz personal.",
 
         // About
@@ -47,7 +47,7 @@ const dict = {
         bookBtn: "Come visit us",
 
         // Hero
-        heroTitle: "We know what suits you",
+        heroTitle: "We sculpt your hair",
         heroSubtitle: "An intuitive space where beauty meets personal peace.",
 
         // About
