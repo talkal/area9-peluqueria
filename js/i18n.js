@@ -17,6 +17,20 @@ const dict = {
         aboutP2: "Sumérgete en un ambiente lleno de arte, plantas, butacas vintage y buenas vibras. Un pequeño oasis para relajarte, conversar y renovar tu estilo.",
         aboutP3: "Además, Área 9 es un espacio vivo: de vez en cuando organizamos diferentes talleres y eventos. ¡Sigue nuestro Instagram para no perderte nada!",
 
+        // Philosophy / Values
+        philosophyTitle: "nuestra filosofía",
+        philosophySubtitle: "Los pilares que definen tu experiencia en Área 9",
+        value1Title: "intuición",
+        value1Desc: "Diana lee tu energía y personalidad para esculpir el estilo que realmente habla de ti.",
+        value2Title: "creatividad y transformación",
+        value2Desc: "El estilismo como un arte vivo que renueva tu imagen exterior y eleva tu espíritu interior.",
+        value3Title: "relajación",
+        value3Desc: "Un pequeño oasis lleno de plantas, té caliente y calma para desconectar del ritmo de Madrid.",
+        value4Title: "armonía",
+        value4Desc: "La mezcla equilibrada entre decoración retro, naturaleza y tu propia expresión personal.",
+        value5Title: "comunicación",
+        value5Desc: "Un diálogo abierto, cercano y bilingüe para que te sientas escuchado de principio a fin.",
+
         // Schedule
         scheduleTitle: "Horarios",
         dayMon: "Lunes, Miércoles",
@@ -55,6 +69,20 @@ const dict = {
         aboutP1: "We don't just cut hair here; we create experiences tailored to your energy. Diana leads this project with a free and creative vision, guided by intuition to find the style that truly speaks to you.",
         aboutP2: "Immerse yourself in an environment filled with art, plants, vintage chairs, and good vibes. A small oasis to relax, chat, and renew your style.",
         aboutP3: "Additionally, Área 9 is a living space: we occasionally host different workshops and events. Follow our Instagram to stay updated!",
+
+        // Philosophy / Values
+        philosophyTitle: "our philosophy",
+        philosophySubtitle: "The core pillars defining your experience at Área 9",
+        value1Title: "intuition",
+        value1Desc: "Diana reads your energy and personality to sculpt the style that truly speaks of you.",
+        value2Title: "creativity & transformation",
+        value2Desc: "Hairdressing as a living art form that renews your outer image and elevates your inner spirit.",
+        value3Title: "relaxation",
+        value3Desc: "A small oasis filled with plants, warm tea, and calm to disconnect from Madrid's pace.",
+        value4Title: "harmony",
+        value4Desc: "A balanced blend of retro aesthetics, nature, and your own personal expression.",
+        value5Title: "communication",
+        value5Desc: "An open, friendly, and bilingual dialogue so you feel heard from start to finish.",
 
         // Schedule
         scheduleTitle: "Schedule",

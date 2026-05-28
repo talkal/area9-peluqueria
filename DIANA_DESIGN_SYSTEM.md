@@ -26,15 +26,17 @@
 
 **Área 9** is an intuitive, creative space where hairdressing meets art, community, and personal peace. It serves individuals seeking not just a haircut, but a personalized, spiritually uplifting experience tailored to what truly suits them.
 
-### Design Philosophy: "Intuitive Artistry & Free-Spirited Peace"
+### Design Philosophy: "Intuitive Transformation & Peaceful Harmony"
 
-The design system is heavily anchored in the brand's core values: Intuition, Creativity, and Peace. It must feel eclectic, welcoming, slightly "witchy/spiritual", and incredibly authentic.
+The design system is heavily anchored in the brand's core values: Intuition, Creativity & Transformation, Relaxation, Harmony, and Communication. It must feel organic, intentional, serene, and welcoming.
 
 | Principle (English) | Principle (Spanish) | Description | Application |
 |---------------------|---------------------|-------------|-------------|
-| **Intuitive** | Intuitiva | Diana knows what suits you without being told. The site should guide users effortlessly. | Clean navigation, prominent and easy-to-read bilingual toggle, soft rounded UI shapes. |
-| **Creative/Artistic** | Creativa y Artística | The salon feels like an eclectic art gallery (vintage chairs, theater posters). | Use of gallery-style layouts to champion photography, asymmetrical features, and striking accent colors. |
-| **Spiritual/Natural**| Espiritual y Natural | Safe, peaceful, good vibes. Full of plants and natural wood. | Earthy and vintage color palette (teal, deep red, warm sand background). |
+| **Intuition** | Intuición | Diana reads the energy and personality of each client to sculpt a style that uniquely fits them. | Clean navigation, effortless flow, warm and personalized touchpoints. |
+| **Creativity & Transformation** | Creatividad y Transformación | Hairdressing as an art form that transforms both physical appearance and inner spirit. | Eclectic gallery layouts, asymmetrical features, and striking visual storytelling. |
+| **Relaxation** | Relajación | A quiet sanctuary away from city noise; a peaceful, calming ritual of self-care. | Soft muted tones, generous whitespace, and calming layout transitions. |
+| **Harmony** | Armonía | A balanced blend of vintage art, natural elements, and personal expression. | Curated grid alignment, balanced typography, and contrast-compliant colors. |
+| **Communication** | Comunicación | An open, bilingual dialogue where every client feels heard, valued, and welcome. | Equal weight to English and Spanish text, clear schedule split-shifts, and intuitive contact links. |
 
 ### Core Design Goals
 
@@ -72,32 +74,33 @@ The design system is heavily anchored in the brand's core values: Intuition, Cre
 
 ### Color Palette
 
-The palette reflects the "Eclectic Retro & Spiritual Nature" theme. We draw directly from the salon's interior: vintage teal barber chairs, deep red accents, lush green plants, and warm wood/white walls.
+The palette reflects the "Earthy Sage & Antique Bronze" theme. We combine `#5d4615` (Antique Bronze) for grounding strength and history, with `#cae7e9` (Sage Mint) for intuitive, calming serenity.
 
 | Token | Hex | Usage | Notes |
 |-------|-----|-------|-------|
-| **primary** | `#2A7A78` | Primary Actions / Headers | Vintage Teal. Deep and calming, matching the vintage furniture. |
-| **primaryHover** | `#3AAFA9` | Hover states | Lighter, energetic teal for buttons and links. |
-| **accent** | `#A62B2B` | Accents / CTAs | Deep Vintage Red. An energetic pop of color reminiscent of her red chairs and artistic posters. |
-| **background** | `#F9F6F0` | Main reading background | Warm Canvas/Sand. Avoid pure white to maintain a cozy, organic feel. |
-| **surface** | `#EFEBE3` | Elevated light cards | Slightly darker warm tone for schedule cards or gallery frames. |
-| **backgroundDark** | `#2C363F` | Hero & Footer backgrounds | Deep Charcoal/Navy. Anchors the site and provides high contrast for English/Spanish toggles. |
-| **textPrimary** | `#3E2723` | Primary headings/body text | Deep Espresso. Warmer and less harsh than pure black, fitting the natural vibe. |
-| **textSecondary**| `#607D8B` | Metatext & Subtitles | Muted Grey/Blue. Connects back to the teal tones. |
+| **primary** | `#5D4615` | Primary Actions / Headers | Antique Bronze. Earthy, rich, and grounding. |
+| **primaryHover** | `#493710` | Hover states | Darker antique bronze for active/hover states. |
+| **accent** | `#CAE7E9` | Accents / Special Details | Sage Mint. Soft, calming, and intuitive. |
+| **background** | `#F9FBFB` | Main reading background | Soft Mint-tinted canvas. Fresh, organic, and easy on the eyes. |
+| **surface** | `#E5F1F2` | Elevated light cards | Slightly darker, sage-tinted surface for cards/schedules. |
+| **backgroundDark** | `#5D4615` | Hero & Footer backgrounds | Antique Bronze. Grounding, rich contrast backdrop. |
+| **textPrimary** | `#3E2E0D` | Primary headings/body text | Darkened Bronze. High-contrast, warm tone for superb readability. |
+| **textSecondary**| `#6B572B` | Metatext & Subtitles | Muted warm bronze. |
+| **textInverse** | `#F9FBFB` | Text on dark backgrounds | Crisp minty off-white. |
 
 ### Typography
 
-Typography must project artistic freedom and elegant intuition. 
+Typography must project organic movement and refined creativity. We utilize the elegant script/cursive font **Balmoral** for headlines, styled exclusively in lowercase, and pair it with **Outfit** (or **Lato**) for interface utility.
 
 | Type | Family | Use Cases |
 |------|--------|-----------|
-| **Display / Hero** | **Cormorant Garamond** | Large cinematic headings, brand name, spiritual/artistic quotes. It has a slight "witchy/elegant" curvature. |
-| **Interface / Body** | **Outfit** or **Lato** | Clean, modern sans-serif for UI components, schedules, and everyday reading. |
+| **Display / Hero** | **Balmoral** | Brand logo, section headers, and quotes. Always rendered in all-lowercase. |
+| **Interface / Body** | **Outfit** or **Lato** | Clean, modern sans-serif for body text, lists, buttons, and navigation. |
 
 **Typographic Hierarchy:**
-- **Hero:** Expressive, elegant, taking center stage.
-- **Subtitles:** Modern, tracked out (wide letter spacing) for a calming breath.
-- **Body:** Minimal, high contrast for readability in both English and Spanish.
+- **Hero / Headings:** Balmoral family, all lowercase (`text-transform: lowercase`), flowing and poetic.
+- **Subtitles:** Modern Outfit, uppercase with generous letter spacing (`0.1em`).
+- **Body:** Outfit, 16px base, high line-height (1.6) for high legibility.
 
 ### Spacing & Layout
 
@@ -111,19 +114,19 @@ Adherence to an organic, slightly more relaxed spacing system (multiples of 8px)
 ### 4.1. Buttons & CTAs
 
 -   **Primary Button (Bookings / Contact):**
-    -   *Background:* Vintage Teal (`#2A7A78`)
-    -   *Text:* Pure White (`#FFFFFF`), `Outfit Medium`, 16px.
+    -   *Background:* Antique Bronze (`#5D4615`)
+    -   *Text:* Soft Mint (`#F9FBFB`), `Outfit Medium`, 16px.
     -   *Shape:* Softly rounded corners (8px) for an organic feel.
-    -   *Hover:* Background shifts to `#3AAFA9`, slight upward transform.
+    -   *Hover:* Background shifts to `#493710` (darker bronze) or soft shadow transition.
 -   **Accent Button (Bilingual Toggle):**
     -   *Background:* Transparent, bordered.
-    -   *Text:* Deep Espresso (`#3E2723`), transitioning to Accent Red (`#A62B2B`) on active state.
+    -   *Text:* Darkened Bronze (`#3E2E0D`), transitioning to Antique Bronze (`#5D4615`) on active state.
 
 ### 4.2. Cards & Containers
 
 -   **Schedule Frame:**
-    -   *Background:* Warm Canvas (`#F9F6F0`) 
-    -   *Border:* Hairline Vintage Teal border.
+    -   *Background:* Soft Mint-tinted canvas (`#F9FBFB`)
+    -   *Border:* Hairline Antique Bronze/Sage Mint border.
     -   *Layout:* Split shifts clearly delineated (e.g., 10:00 - 14:00 | 16:00 - 19:30).
 -   **Gallery Masonry:**
     -   Images are presented in an asymmetrical, masonry-style grid to emphasize the "creative/free" nature of the brand, rather than a rigid corporate grid.
