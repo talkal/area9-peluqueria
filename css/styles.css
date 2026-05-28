@@ -9,6 +9,8 @@
     /* Darker Antique Bronze */
     --accent: #CAE7E9;
     /* Sage Mint */
+    --accent-dark: #35595C;
+    /* Deep Slate Sage */
     --background: #F9FBFB;
     /* Soft Mint Canvas */
     --surface: #E5F1F2;
@@ -161,7 +163,7 @@ img {
 
 .logo-sub {
     font-size: 0.8rem;
-    color: var(--accent);
+    color: var(--accent-dark);
     letter-spacing: 2px;
     text-transform: uppercase;
     font-family: var(--font-body);
@@ -190,8 +192,8 @@ img {
 }
 
 .lang-btn.active {
-    background-color: var(--surface);
-    color: var(--accent);
+    background-color: var(--primary);
+    color: var(--text-inverse);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -229,7 +231,7 @@ img {
 }
 
 .link-primary {
-    color: var(--accent);
+    color: var(--accent-dark);
     font-weight: 500;
     text-decoration: underline;
     text-decoration-thickness: 1px;
@@ -392,7 +394,7 @@ img {
 }
 
 .hours.closed {
-    color: var(--accent);
+    color: var(--accent-dark);
     font-style: italic;
 }
 
@@ -417,7 +419,7 @@ img {
 }
 
 .social-link:hover {
-    color: var(--accent);
+    color: var(--accent-dark);
 }
 
 /* ==========================================================================
@@ -552,7 +554,7 @@ img {
 }
 
 .footer .disclaimer {
-    color: var(--text-secondary);
+    color: var(--accent);
     font-size: 0.875rem;
     margin-top: var(--space-xs);
 }

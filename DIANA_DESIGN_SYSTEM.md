@@ -81,6 +81,7 @@ The palette reflects the "Earthy Sage & Antique Bronze" theme. We combine `#5d46
 | **primary** | `#5D4615` | Primary Actions / Headers | Antique Bronze. Earthy, rich, and grounding. |
 | **primaryHover** | `#493710` | Hover states | Darker antique bronze for active/hover states. |
 | **accent** | `#CAE7E9` | Accents / Special Details | Sage Mint. Soft, calming, and intuitive. |
+| **accentDark** | `#35595C` | High-contrast text accent | Deep Slate Sage. Enhances readability/WCAG compliance. |
 | **background** | `#F9FBFB` | Main reading background | Soft Mint-tinted canvas. Fresh, organic, and easy on the eyes. |
 | **surface** | `#E5F1F2` | Elevated light cards | Slightly darker, sage-tinted surface for cards/schedules. |
 | **backgroundDark** | `#5D4615` | Hero & Footer backgrounds | Antique Bronze. Grounding, rich contrast backdrop. |
