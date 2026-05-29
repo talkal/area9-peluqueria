@@ -8,7 +8,7 @@ const dict = {
         bookBtn: "Ven a visitarnos",
 
         // Hero
-        heroTitle: "Esculpimos tu pelo",
+        heroTitle: "Esculpimos tu cabello",
         heroSubtitle: "Un espacio intuitivo donde la belleza se encuentra con la paz personal.",
 
         // About
