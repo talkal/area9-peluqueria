@@ -112,10 +112,10 @@ img {
 /* Typography Classes */
 .section-title {
     font-family: var(--font-hero);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 600;
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: normal;
     margin-bottom: var(--space-md);
-    line-height: 1.1;
+    line-height: 1.2;
     color: var(--primary);
     text-transform: lowercase;
 }
@@ -163,8 +163,8 @@ img {
 }
 
 .logo-area {
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: normal;
     color: var(--primary);
     line-height: 1;
 }
@@ -282,8 +282,9 @@ img {
 
 .hero-title {
     font-family: var(--font-hero);
-    font-size: clamp(3rem, 8vw, 5rem);
-    line-height: 1.05;
+    font-size: clamp(4rem, 10vw, 6.5rem);
+    font-weight: normal;
+    line-height: 1.2;
     color: var(--text-primary);
     margin-bottom: var(--space-md);
     text-transform: lowercase;
@@ -374,7 +375,8 @@ img {
 
 .card-title {
     font-family: var(--font-hero);
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: normal;
     color: var(--primary);
     margin-bottom: var(--space-lg);
     text-transform: lowercase;
@@ -606,7 +608,8 @@ img {
 
 .value-title {
     font-family: var(--font-hero);
-    font-size: 1.45rem;
+    font-size: 2.2rem;
+    font-weight: normal;
     color: var(--primary);
     margin-bottom: var(--space-sm);
     text-transform: lowercase;
@@ -670,6 +673,6 @@ img {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
     }
 }
