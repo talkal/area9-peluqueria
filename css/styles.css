@@ -36,19 +36,13 @@
     --font-hero: 'Balmoral', 'Cormorant Garamond', serif;
     --font-body: 'Outfit', sans-serif;
 
-    /* Spacing */
-    --space-xs: 0.5rem;
-    /* 8px */
-    --space-sm: 1rem;
-    /* 16px */
-    --space-md: 1.5rem;
-    /* 24px */
-    --space-lg: 2rem;
-    /* 32px */
-    --space-xl: 3rem;
-    /* 48px */
-    --space-2xl: 5rem;
-    /* 80px */
+    /* Spacing - Decoupled from root font-size to prevent layout ballooning */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 64px;
 
     /* Transitions & Radii */
     --radius-sm: 4px;
@@ -77,7 +71,8 @@ body {
     font-family: var(--font-body);
     background-color: var(--background);
     color: var(--text-primary);
-    line-height: 1.6;
+    font-size: 1.0625rem; /* 17px */
+    line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -102,27 +97,29 @@ img {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--space-lg);
+    padding: 0 var(--space-md);
 }
 
 .section-padding {
-    padding: var(--space-2xl) 0;
+    padding: clamp(60px, 8vw, 100px) 0;
 }
 
 /* Typography Classes */
 .section-title {
     font-family: var(--font-hero);
-    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: normal;
-    margin-bottom: var(--space-md);
-    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+    line-height: 1.25;
     color: var(--primary);
     text-transform: lowercase;
+    letter-spacing: -0.01em;
 }
 
 .section-subtitle {
     color: var(--text-secondary);
     font-size: 1.125rem;
+    line-height: 1.6;
     max-width: 600px;
 }
 
@@ -146,7 +143,7 @@ img {
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(93, 70, 21, 0.15);
-    padding: var(--space-sm) 0;
+    padding: 16px 0;
 }
 
 .nav-content {
@@ -163,18 +160,18 @@ img {
 }
 
 .logo-area {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: normal;
     color: var(--primary);
     line-height: 1;
 }
 
 .logo-sub {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     color: var(--accent-dark);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-family: var(--font-body);
+    letter-spacing: 0.05em;
 }
 
 .lang-toggle {
@@ -190,7 +187,7 @@ img {
     background: transparent;
     border: none;
     color: var(--text-primary);
-    padding: 4px 12px;
+    padding: 6px 14px;
     border-radius: 16px;
     font-family: var(--font-body);
     font-weight: 500;
@@ -222,7 +219,7 @@ img {
     display: inline-block;
     background-color: var(--primary);
     color: var(--text-inverse);
-    padding: 12px 28px;
+    padding: 14px 32px;
     border-radius: var(--radius-md);
     font-weight: 500;
     font-size: 1rem;
@@ -257,7 +254,7 @@ img {
     position: relative;
     padding-top: 120px;
     /* Account for navbar */
-    padding-bottom: var(--space-2xl);
+    padding-bottom: var(--space-xl);
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -282,9 +279,9 @@ img {
 
 .hero-title {
     font-family: var(--font-hero);
-    font-size: clamp(4rem, 10vw, 6.5rem);
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
     font-weight: normal;
-    line-height: 1.2;
+    line-height: 1.25;
     color: var(--text-primary);
     margin-bottom: var(--space-md);
     text-transform: lowercase;
@@ -301,10 +298,11 @@ img {
 }
 
 .hero-subtitle {
-    font-size: clamp(1.125rem, 2vw, 1.35rem);
+    font-size: clamp(1.125rem, 2.5vw, 1.35rem);
     color: var(--text-secondary);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
     max-width: 500px;
+    line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -313,13 +311,17 @@ img {
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
     align-items: center;
 }
 
 .about-text p {
-    margin-bottom: var(--space-md);
-    font-size: 1.125rem;
+    margin-bottom: 20px;
+    font-size: 1.0625rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
 }
 
 .about-image-wrapper {
@@ -362,31 +364,35 @@ img {
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 .card {
     background-color: var(--background);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     border-radius: var(--radius-lg);
     border: 1px solid rgba(93, 70, 21, 0.15);
+    box-shadow: 0 10px 30px rgba(93, 70, 21, 0.03);
 }
 
 .card-title {
     font-family: var(--font-hero);
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: normal;
     color: var(--primary);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     text-transform: lowercase;
 }
 
 .schedule-list li {
     display: flex;
     flex-direction: column;
-    padding: var(--space-sm) 0;
+    padding: 12px 0;
     border-bottom: 1px solid rgba(62, 46, 13, 0.1);
+    font-size: 1rem;
 }
 
 .schedule-list li:last-child {
@@ -397,10 +403,12 @@ img {
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 4px;
+    font-size: 1.0625rem;
 }
 
 .hours {
     color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 .hours.closed {
@@ -411,13 +419,14 @@ img {
 .address-block {
     font-style: normal;
     color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: var(--space-md);
-    margin-top: var(--space-md);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 1rem;
 }
 
 .social-links {
-    margin-top: var(--space-lg);
+    margin-top: var(--space-md);
 }
 
 .social-link {
@@ -426,6 +435,7 @@ img {
     gap: 12px;
     color: var(--text-primary);
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .social-link:hover {
@@ -441,38 +451,40 @@ img {
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-xl);
-    margin-top: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
 }
 
 .review-card {
     background-color: var(--background);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     border-radius: var(--radius-lg);
     border: 1px solid rgba(93, 70, 21, 0.15);
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: 16px;
     box-shadow: 0 10px 30px rgba(93, 70, 21, 0.04);
 }
 
 .stars {
     color: var(--primary);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     letter-spacing: 2px;
 }
 
 .review-text {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     font-style: italic;
     flex-grow: 1;
+    line-height: 1.6;
 }
 
 .review-author {
     font-weight: 600;
     color: var(--text-secondary);
-    margin-top: var(--space-md);
+    font-size: 0.95rem;
+    margin-top: 8px;
 }
 
 .review-more-text {
@@ -490,8 +502,8 @@ img {
     font-weight: 600;
     cursor: pointer;
     padding: 0;
-    margin-top: 8px;
-    font-size: 1rem;
+    margin-top: 4px;
+    font-size: 0.9rem;
     font-family: inherit;
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -518,22 +530,21 @@ img {
    ========================================================================== */
 .gallery-section {
     background-color: var(--background);
+    padding-bottom: calc(clamp(60px, 8vw, 100px) + 50px);
 }
 
 .masonry-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: var(--space-xl) var(--space-lg);
-    margin-top: calc(var(--space-2xl) + 20px);
+    gap: 24px;
+    margin-top: 40px;
     justify-content: center;
-    align-items: center;
 }
 
 .masonry-item {
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(93, 70, 21, 0.08);
-    /* elevated feel */
 }
 
 .masonry-item img {
@@ -563,9 +574,13 @@ img {
     text-align: center;
 }
 
+.footer p {
+    font-size: 0.95rem;
+}
+
 .footer .disclaimer {
     color: var(--accent);
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     margin-top: var(--space-xs);
 }
 
@@ -580,12 +595,12 @@ img {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: var(--space-md);
-    margin-top: var(--space-2xl);
+    margin-top: var(--space-xl);
 }
 
 .value-card {
     background-color: var(--surface);
-    padding: var(--space-lg) var(--space-sm);
+    padding: 32px 20px;
     border-radius: var(--radius-md);
     border: 1px solid rgba(93, 70, 21, 0.15);
     text-align: center;
@@ -601,25 +616,25 @@ img {
 }
 
 .value-icon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--primary);
-    margin-bottom: var(--space-xs);
+    margin-bottom: 12px;
 }
 
 .value-title {
     font-family: var(--font-hero);
-    font-size: 2.2rem;
+    font-size: 1.75rem;
     font-weight: normal;
     color: var(--primary);
-    margin-bottom: var(--space-sm);
+    margin-bottom: 12px;
     text-transform: lowercase;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 .value-desc {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 @media (max-width: 1024px) {
@@ -647,6 +662,7 @@ img {
 @media (max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
     }
 
     .hero {
@@ -655,7 +671,6 @@ img {
     }
 
     .masonry-grid {
-        /* On small tablets, show 2 columns but centered */
         grid-template-columns: repeat(2, minmax(200px, 1fr));
         gap: var(--space-lg);
     }
@@ -663,11 +678,9 @@ img {
 
 @media (max-width: 580px) {
     .masonry-grid {
-        /* On phones, just 1 column, centered */
         grid-template-columns: minmax(200px, 350px);
     }
 
-    /* Remove the staggering effect on mobile since it's only 1 column */
     .masonry-item:nth-child(even) {
         transform: none;
     }
