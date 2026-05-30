@@ -32,8 +32,9 @@
     --text-inverse: #F9FBFB;
     /* Crisp Minty Off-white */
 
+    /* Typography */
     --font-hero: 'Balmoral', 'Cormorant Garamond', serif;
-    --font-body: 'Balmoral', 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
 
     /* Spacing - Decoupled from root font-size to prevent layout ballooning */
     --space-xs: 8px;
@@ -70,9 +71,8 @@ body {
     font-family: var(--font-body);
     background-color: var(--background);
     color: var(--text-primary);
-    font-size: 3.2rem;
-    line-height: 1.35;
-    text-transform: lowercase;
+    font-size: 1.0625rem; /* 17px */
+    line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -107,10 +107,10 @@ img {
 /* Typography Classes */
 .section-title {
     font-family: var(--font-hero);
-    font-size: clamp(4.5rem, 9vw, 6.5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: normal;
     margin-bottom: var(--space-sm);
-    line-height: 1.1;
+    line-height: 1.25;
     color: var(--primary);
     text-transform: lowercase;
     letter-spacing: -0.01em;
@@ -118,9 +118,9 @@ img {
 
 .section-subtitle {
     color: var(--text-secondary);
-    font-size: 3.2rem;
-    line-height: 1.35;
-    max-width: 750px;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 600px;
 }
 
 .center {
@@ -143,7 +143,7 @@ img {
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(93, 70, 21, 0.15);
-    padding: 6px 0;
+    padding: 16px 0;
 }
 
 .nav-content {
@@ -160,14 +160,14 @@ img {
 }
 
 .logo-area {
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: normal;
     color: var(--primary);
-    line-height: 0.95;
+    line-height: 1;
 }
 
 .logo-sub {
-    font-size: 2rem;
+    font-size: 1.1rem;
     color: var(--accent-dark);
     text-transform: lowercase;
     font-family: var(--font-body);
@@ -187,12 +187,11 @@ img {
     background: transparent;
     border: none;
     color: var(--text-primary);
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 16px;
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 2.2rem;
-    text-transform: lowercase;
+    font-size: 0.875rem;
     cursor: pointer;
     transition: var(--transition);
 }
@@ -220,10 +219,10 @@ img {
     display: inline-block;
     background-color: var(--primary);
     color: var(--text-inverse);
-    padding: 8px 24px;
+    padding: 14px 32px;
     border-radius: var(--radius-md);
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
     transition: var(--transition);
@@ -280,9 +279,9 @@ img {
 
 .hero-title {
     font-family: var(--font-hero);
-    font-size: clamp(5.5rem, 11vw, 8.5rem);
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
     font-weight: normal;
-    line-height: 1.1;
+    line-height: 1.25;
     color: var(--text-primary);
     margin-bottom: var(--space-md);
     text-transform: lowercase;
@@ -299,11 +298,11 @@ img {
 }
 
 .hero-subtitle {
-    font-size: clamp(2.8rem, 5vw, 3.8rem);
+    font-size: clamp(1.125rem, 2.5vw, 1.35rem);
     color: var(--text-secondary);
     margin-bottom: var(--space-lg);
-    max-width: 650px;
-    line-height: 1.35;
+    max-width: 500px;
+    line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -317,9 +316,8 @@ img {
 }
 
 .about-text p {
-    margin-bottom: 12px;
-    font-size: 3.2rem;
-    line-height: 1.35;
+    margin-bottom: 20px;
+    font-size: 1.0625rem;
 }
 
 .about-text p:last-child {
@@ -382,7 +380,7 @@ img {
 
 .card-title {
     font-family: var(--font-hero);
-    font-size: 4.5rem;
+    font-size: 2.25rem;
     font-weight: normal;
     color: var(--primary);
     margin-bottom: var(--space-md);
@@ -392,10 +390,9 @@ img {
 .schedule-list li {
     display: flex;
     flex-direction: column;
-    padding: 8px 0;
+    padding: 12px 0;
     border-bottom: 1px solid rgba(62, 46, 13, 0.1);
-    font-size: 2.8rem;
-    line-height: 1.35;
+    font-size: 1rem;
 }
 
 .schedule-list li:last-child {
@@ -406,12 +403,12 @@ img {
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 4px;
-    font-size: 3rem;
+    font-size: 1.0625rem;
 }
 
 .hours {
     color: var(--text-secondary);
-    font-size: 2.8rem;
+    font-size: 0.95rem;
 }
 
 .hours.closed {
@@ -422,10 +419,10 @@ img {
 .address-block {
     font-style: normal;
     color: var(--text-secondary);
-    line-height: 1.35;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    font-size: 2.8rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 1rem;
 }
 
 .social-links {
@@ -438,7 +435,7 @@ img {
     gap: 12px;
     color: var(--text-primary);
     font-weight: 500;
-    font-size: 2.8rem;
+    font-size: 1rem;
 }
 
 .social-link:hover {
@@ -472,21 +469,21 @@ img {
 
 .stars {
     color: var(--primary);
-    font-size: 1.6rem;
+    font-size: 1.1rem;
     letter-spacing: 2px;
 }
 
 .review-text {
-    font-size: 3.2rem;
+    font-size: 1.0625rem;
     font-style: italic;
     flex-grow: 1;
-    line-height: 1.35;
+    line-height: 1.6;
 }
 
 .review-author {
     font-weight: 600;
     color: var(--text-secondary);
-    font-size: 2.8rem;
+    font-size: 0.95rem;
     margin-top: 8px;
 }
 
@@ -506,7 +503,7 @@ img {
     cursor: pointer;
     padding: 0;
     margin-top: 4px;
-    font-size: 2.6rem;
+    font-size: 0.9rem;
     font-family: inherit;
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -578,12 +575,12 @@ img {
 }
 
 .footer p {
-    font-size: 3rem;
+    font-size: 0.95rem;
 }
 
 .footer .disclaimer {
     color: var(--accent);
-    font-size: 2.4rem;
+    font-size: 0.85rem;
     margin-top: var(--space-xs);
 }
 
@@ -619,25 +616,25 @@ img {
 }
 
 .value-icon {
-    font-size: 2rem;
+    font-size: 1.25rem;
     color: var(--primary);
     margin-bottom: 12px;
 }
 
 .value-title {
     font-family: var(--font-hero);
-    font-size: 4rem;
+    font-size: 1.75rem;
     font-weight: normal;
     color: var(--primary);
     margin-bottom: 12px;
     text-transform: lowercase;
-    line-height: 1.1;
+    line-height: 1.25;
 }
 
 .value-desc {
-    font-size: 2.8rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.35;
+    line-height: 1.6;
 }
 
 @media (max-width: 1024px) {
@@ -689,6 +686,6 @@ img {
     }
 
     .hero-title {
-        font-size: 5.5rem;
+        font-size: 3.2rem;
     }
 }
