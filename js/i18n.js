@@ -13,23 +13,23 @@ const dict = {
 
         // About
         aboutTitle: "Tu esencia, expresada",
-        aboutP1: "Aquí no solo hacemos cortes de pelo; creamos experiencias adaptadas a tu energía. Diana lidera este proyecto con una visión libre y creativa, guiada por la intuición para encontrar el estilo que realmente habla de ti.",
-        aboutP2: "Sumérgete en un oasis de calma para relajarte, conversar y renovar tu estilo.",
-        aboutP3: "Además, Área 9 es un espacio vivo: de vez en cuando organizamos diferentes talleres y eventos. ¡Sigue nuestro Instagram para estar informado!",
+        aboutP1: "Área 9 nace con la idea de ir más allá del servicio convencional. Bajo la dirección creativa de Diana, buscamos propuestas personalizadas que se adapten a tu estilo de vida y realcen tu identidad de manera natural.",
+        aboutP2: "Un espacio tranquilo y acogedor concebido para pausar el ritmo diario mientras cuidamos de tu cabello.",
+        aboutP3: "Además, Área 9 es un punto de encuentro dinámico: organizamos periódicamente talleres de bienestar, eventos culturales y de artes escénicas. Síguenos en Instagram para enterarte de todo.",
 
         // Philosophy / Values
         philosophyTitle: "nuestra filosofía",
-        philosophySubtitle: "Los pilares que definen tu experiencia en Área 9",
+        philosophySubtitle: "Los pilares de la experiencia en Área 9",
         value1Title: "intuición",
-        value1Desc: "Diana lee tu energía y personalidad para esculpir el estilo que realmente habla de ti.",
-        value2Title: "creatividad y transformación",
-        value2Desc: "El estilismo como un arte vivo que renueva tu imagen exterior y eleva tu espíritu interior.",
-        value3Title: "relajación",
-        value3Desc: "Un pequeño oasis lleno de plantas, té caliente y calma para desconectar del ritmo de Madrid.",
+        value1Desc: "Estudiamos tus facciones y estilo personal para diseñar un corte que se adapte de verdad a tu día a día.",
+        value2Title: "creatividad y técnica",
+        value2Desc: "Entendemos el estilismo como una disciplina artística apoyada en técnicas precisas y tendencias actuales.",
+        value3Title: "bienestar",
+        value3Desc: "Un ambiente de calma y atención individualizada pensado para desconectar de la prisa urbana.",
         value4Title: "armonía",
-        value4Desc: "La mezcla equilibrada entre decoración retro, naturaleza y tu propia expresión personal.",
+        value4Desc: "El equilibrio entre una cuidada estética retro, toques vegetales y tu propio espacio de expresión.",
         value5Title: "comunicación",
-        value5Desc: "Un diálogo abierto, cercano y bilingüe para que te sientas escuchado de principio a fin.",
+        value5Desc: "Un diálogo directo, cercano y bilingüe para comprender con exactitud el resultado que deseas.",
 
         // Schedule
         scheduleTitle: "Horarios",
@@ -54,7 +54,7 @@ const dict = {
 
         // Footer
         footerRights: "© 2026 Área 9 Peluquería. Todos los derechos reservados.",
-        footerDisclaimer: "Hecho con amor y creatividad."
+        footerDisclaimer: "Estilismo, arte y bienestar."
     },
     en: {
         // Navigation & General
@@ -66,23 +66,23 @@ const dict = {
 
         // About
         aboutTitle: "Your essence, expressed",
-        aboutP1: "We don't just cut hair here; we create experiences tailored to your energy. Diana leads this project with a free and creative vision, guided by intuition to find the style that truly speaks to you.",
-        aboutP2: "Immerse yourself in an oasis of calm to relax, chat, and renew your style.",
-        aboutP3: "Additionally, Área 9 is a living space: we occasionally host different workshops and events. Follow our Instagram to stay informed!",
+        aboutP1: "Área 9 was born to go beyond a conventional service. Under Diana's creative direction, we focus on personalized styles that adapt to your lifestyle and naturally enhance your identity.",
+        aboutP2: "A calm and welcoming space designed to pause the daily rush while we care for your hair.",
+        aboutP3: "Additionally, Área 9 is a dynamic meeting point: we regularly host wellness workshops, cultural events, and performing arts. Follow us on Instagram to stay updated.",
 
         // Philosophy / Values
         philosophyTitle: "our philosophy",
         philosophySubtitle: "The core pillars defining your experience at Área 9",
         value1Title: "intuition",
-        value1Desc: "Diana reads your energy and personality to sculpt the style that truly speaks of you.",
-        value2Title: "creativity & transformation",
-        value2Desc: "Hairdressing as a living art form that renews your outer image and elevates your inner spirit.",
-        value3Title: "relaxation",
-        value3Desc: "A small oasis filled with plants, warm tea, and calm to disconnect from Madrid's pace.",
+        value1Desc: "We study your features and personal style to design a haircut that truly fits your daily life.",
+        value2Title: "creativity & technique",
+        value2Desc: "We approach hairdressing as an artistic discipline backed by precise techniques and current trends.",
+        value3Title: "well-being",
+        value3Desc: "A peaceful environment with individualized attention designed to disconnect from the urban rush.",
         value4Title: "harmony",
-        value4Desc: "A balanced blend of retro aesthetics, nature, and your own personal expression.",
+        value4Desc: "A balanced blend of curated retro aesthetics, botanical touches, and your own personal expression.",
         value5Title: "communication",
-        value5Desc: "An open, friendly, and bilingual dialogue so you feel heard from start to finish.",
+        value5Desc: "A direct, close, and bilingual dialogue to understand exactly the result you are looking for.",
 
         // Schedule
         scheduleTitle: "Schedule",
@@ -107,7 +107,7 @@ const dict = {
 
         // Footer
         footerRights: "© 2026 Área 9 Peluquería. All rights reserved.",
-        footerDisclaimer: "Made with love and creativity."
+        footerDisclaimer: "Hairdressing, art, and well-being."
     }
 };
 
