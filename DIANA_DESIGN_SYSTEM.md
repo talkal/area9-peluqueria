@@ -1,147 +1,130 @@
-# Área 9 — Master UI/UX Design System
+# Área 9 — Design System
 
-**Version:** 1.0.0
-**Last Updated:** 2026-02-25
-**Status:** Draft / User Review
-**Owner:** Antigravity & Tal
+**Version:** 2.0.0
+**Last updated:** 2026-08-07
+**Status:** Current — supersedes v1.0.0 entirely
+**Source of truth:** `css/styles.css`. This document describes it; where they disagree, the CSS wins.
 
----
-
-## 📋 Table of Contents
-
-1. [Overview & Philosophy](#overview--philosophy)
-2. [Brand Identity](#brand-identity)
-3. [Visual Design System](#visual-design-system)
-   - [Color Palette](#color-palette)
-   - [Typography](#typography)
-   - [Spacing & Layout](#spacing--layout)
-4. [Component Library](#component-library)
-5. [Content & Tone](#content--tone)
+> v2 replaces the v1 system wholesale. Palette, both typefaces, and the whole component
+> approach changed. Nothing from v1 survives except the brand values. If you are an
+> automated tool reading this file to build a design system, use only what is below.
 
 ---
 
-## 1. Overview & Philosophy
+## 1. Brand
 
-### Mission Statement
+**Área 9** is a creative hair salon in Malasaña, Madrid, run by Diana. Hairdressing treated as craft, in a calm, artistic, slightly bohemian space that also hosts workshops and cultural events.
 
-**Área 9** is an intuitive, creative space where hairdressing meets art, community, and personal peace. It serves individuals seeking not just a haircut, but a personalized, spiritually uplifting experience tailored to what truly suits them.
+- **What it is:** free-spirited, intuitive, highly skilled, personal.
+- **What it is not:** a sterile, fast, commercial chain salon.
+- **Motto:** "Sabemos lo que te sienta bien." / "We know what suits you."
+- **Voice:** warm, unhurried, artistic. Like a friend with excellent taste.
+- **Languages:** Spanish and English, equal weight. Spanish is the default — the clientele is local.
 
-### Design Philosophy: "Intuitive Transformation & Peaceful Harmony"
-
-The design system is heavily anchored in the brand's core values: Intuition, Creativity & Transformation, Relaxation, Harmony, and Communication. It must feel organic, intentional, serene, and welcoming.
-
-| Principle (English) | Principle (Spanish) | Description | Application |
-|---------------------|---------------------|-------------|-------------|
-| **Intuition** | Intuición | Diana reads the energy and personality of each client to sculpt a style that uniquely fits them. | Clean navigation, effortless flow, warm and personalized touchpoints. |
-| **Creativity & Transformation** | Creatividad y Transformación | Hairdressing as an art form that transforms both physical appearance and inner spirit. | Eclectic gallery layouts, asymmetrical features, and striking visual storytelling. |
-| **Relaxation** | Relajación | A quiet sanctuary away from city noise; a peaceful, calming ritual of self-care. | Soft muted tones, generous whitespace, and calming layout transitions. |
-| **Harmony** | Armonía | A balanced blend of vintage art, natural elements, and personal expression. | Curated grid alignment, balanced typography, and contrast-compliant colors. |
-| **Communication** | Comunicación | An open, bilingual dialogue where every client feels heard, valued, and welcome. | Equal weight to English and Spanish text, clear schedule split-shifts, and intuitive contact links. |
-
-### Core Design Goals
-
-1. **"Eclectic Vintage Gallery" Aesthetic**
-   - The UI must look like a creative, cozy, living space.
-   - Use high-quality imagery to showcase her actual work and the beautiful interior.
-
-2. **Bilingual Harmony**
-   - Seamless toggling between English and Spanish. Neither language feels secondary.
-   - Consistent typography to handle both languages elegantly.
-
-3. **Simple & Maintainable**
-   - The 'Gallery' must be easy to update.
-   - The 'Schedule' needs to be clear, given the specific split-shift hours.
+The visual direction comes from Marisol (designer), delivered as `assets/ejemplos web diana.pdf`. That PDF is the reference for any new work.
 
 ---
 
-## 2. Brand Identity
+## 2. Colour
 
-### Brand Positioning
+Sampled directly from the designer's PDF at 150 dpi. Do not substitute by eye.
 
-- **What we are:** A free-spirited, intuitive, highly professional yet creative hair salon providing personalized experiences.
-- **What we are NOT:** A sterile, generic, hyper-commercial, fast-paced chain salon.
-- **Motto:** "We know what suits you." / "Sabemos lo que te sienta bien."
+| Token | Hex | Role |
+|---|---|---|
+| `--bronze` | `#4D3B16` | Headlines, buttons, footer ground. The primary. |
+| `--bronze-deep` | `#3A2C10` | Button hover only. |
+| `--mint` | `#BEDDCB` | Brand green. Accents, footer text on bronze. |
+| `--mint-hero` | `#A9D4C8` | Hero panel only — matched to the wall in `hero.jpg` so the flat panel and the photograph read as one continuous surface. |
+| `--mint-soft` | `#D6E9DC` | Reserved, currently unused. |
+| `--gold` | `#C9A961` | Decorative line art only (sacred geometry, footer rule). Never text. |
+| `--gold-text` | `#8A6A2B` | The gold when it carries text. Darkened to pass AA. |
+| `--cream` | `#F5F2EA` | Schedule/contact section ground. One section only. |
+| `--white` | `#FFFFFF` | Body and most section grounds. |
+| `--ink` | `#2A2418` | Body text. |
+| `--ink-soft` | `#6B5B3B` | Secondary text, hours, captions. |
 
-### Brand Personality
+**Measured contrast (all pass WCAG AA):**
 
-**Tone:** Warm, peaceful, artistic, and profoundly welcoming.
-**Voice:** Like a creative friend who has excellent taste and a calming presence.
-**Visual Style:** Vintage eclectic details (like her red and teal barber chairs), rich plant greens, natural sunlight, organic shapes.
+| Pair | Ratio |
+|---|---|
+| bronze on mint | 7.37 |
+| gold-text on white | 5.03 |
+| ink-soft on white | 6.59 |
+| mint on bronze | 7.37 |
 
----
-
-## 3. Visual Design System
-
-### Color Palette
-
-The palette reflects the "Earthy Sage & Antique Bronze" theme. We combine `#5d4615` (Antique Bronze) for grounding strength and history, with `#cae7e9` (Sage Mint) for intuitive, calming serenity.
-
-| Token | Hex | Usage | Notes |
-|-------|-----|-------|-------|
-| **primary** | `#5D4615` | Primary Actions / Headers | Antique Bronze. Earthy, rich, and grounding. |
-| **primaryHover** | `#493710` | Hover states | Darker antique bronze for active/hover states. |
-| **accent** | `#CAE7E9` | Accents / Special Details | Sage Mint. Soft, calming, and intuitive. |
-| **accentDark** | `#35595C` | High-contrast text accent | Deep Slate Sage. Enhances readability/WCAG compliance. |
-| **background** | `#F9FBFB` | Main reading background | Soft Mint-tinted canvas. Fresh, organic, and easy on the eyes. |
-| **surface** | `#E5F1F2` | Elevated light cards | Slightly darker, sage-tinted surface for cards/schedules. |
-| **backgroundDark** | `#5D4615` | Hero & Footer backgrounds | Antique Bronze. Grounding, rich contrast backdrop. |
-| **textPrimary** | `#3E2E0D` | Primary headings/body text | Darkened Bronze. High-contrast, warm tone for superb readability. |
-| **textSecondary**| `#6B572B` | Metatext & Subtitles | Muted warm bronze. |
-| **textInverse** | `#F9FBFB` | Text on dark backgrounds | Crisp minty off-white. |
-
-### Typography
-
-Typography must project organic movement and refined creativity. We utilize the elegant script/cursive font **Balmoral** for headlines, styled exclusively in lowercase, and pair it with **Outfit** (or **Lato**) for interface utility.
-
-| Type | Family | Use Cases |
-|------|--------|-----------|
-| **Display / Hero** | **Balmoral** | Brand logo, section headers, and quotes. Always rendered in all-lowercase. |
-| **Interface / Body** | **Outfit** or **Lato** | Clean, modern sans-serif for body text, lists, buttons, and navigation. |
-
-**Typographic Hierarchy:**
-- **Hero / Headings:** Balmoral family, all lowercase (`text-transform: lowercase`), flowing and poetic.
-- **Subtitles:** Modern Outfit, uppercase with generous letter spacing (`0.1em`).
-- **Body:** Outfit, 16px base, high line-height (1.6) for high legibility.
-
-### Spacing & Layout
-
-Adherence to an organic, slightly more relaxed spacing system (multiples of 8px).
-- Emphasize breathing room (large margins) to invoke a feeling of peace.
+The body ground is white. Cream appears on exactly one section. Do not spread it — a warm near-white as the dominant background is not this brand.
 
 ---
 
-## 4. Component Library
+## 3. Typography
 
-### 4.1. Buttons & CTAs
+Two families. Do not add a third.
 
--   **Primary Button (Bookings / Contact):**
-    -   *Background:* Antique Bronze (`#5D4615`)
-    -   *Text:* Soft Mint (`#F9FBFB`), `Outfit Medium`, 16px.
-    -   *Shape:* Softly rounded corners (8px) for an organic feel.
-    -   *Hover:* Background shifts to `#493710` (darker bronze) or soft shadow transition.
--   **Accent Button (Bilingual Toggle):**
-    -   *Background:* Transparent, bordered.
-    -   *Text:* Darkened Bronze (`#3E2E0D`), transitioning to Antique Bronze (`#5D4615`) on active state.
+### Balmoral A9 — display
 
-### 4.2. Cards & Containers
+Connected script, used for headlines only, always lowercase. Shipped as a **corrected** webfont at `assets/fonts/balmoral-a9.woff2`.
 
--   **Schedule Frame:**
-    -   *Background:* Soft Mint-tinted canvas (`#F9FBFB`)
-    -   *Border:* Hairline Antique Bronze/Sage Mint border.
-    -   *Layout:* Split shifts clearly delineated (e.g., 10:00 - 14:00 | 16:00 - 19:30).
--   **Gallery Masonry:**
-    -   Images are presented in an asymmetrical, masonry-style grid to emphasize the "creative/free" nature of the brand, rather than a rigid corporate grid.
+**Critical mechanics — read before touching any display type:**
+
+Balmoral joins letters by **negative sidebearings**: each glyph overhangs its advance box and overlaps the next. It does not use kerning. Consequences:
+
+1. **`letter-spacing` must stay at 0 or negative.** Any positive tracking breaks all 26 joins at once and the script falls apart.
+2. **`b` and `s` originally broke the joins** — they were the only two lowercase glyphs with positive right sidebearings (+27 and +22 units on a 2048 em). The shipped font corrects this by pulling their advances back 54 and 49 units. Verified by pixel-column ink analysis across six test words.
+3. **The space glyph is 0.157em, too wide for a connected script.** `.display` sets `word-spacing: -.075em` to compensate. Keep it.
+4. Ascenders and descenders are very long (1262 / −453 on 2048 em), so display `line-height` belongs **below 1** — currently .84 on the hero, .88 on section titles.
+
+**Width variants** (Diana asked for 130% horizontal scale; the widening thickens the strokes noticeably, so all three ship for comparison):
+
+- `balmoral-a9.woff2` — 100%
+- `balmoral-a9-115.woff2` — 115%
+- `balmoral-a9-wide.woff2` — 130%
+
+**Enlarged initial** (`.ti`): the first letter of a section title is the *lowercase* glyph at 1.33em. Not an ornamental capital.
+
+**Ornamental capital** (`.tc`): Balmoral's natural uppercase, used sparingly. Currently only the C in "tu Cabello" in the hero. The font has no `GSUB` table, so there are no swash alternates — that C is simply the normal capital.
+
+### Alegreya — body
+
+Served locally from `assets/fonts/` at 400/500/700, roman and italic. Not Google Fonts — same files the designer used.
+
+**Italic is the default for prose.** This is deliberate and comes from the reference, where all body copy is set in italic. Roman is reserved for functional data — opening hours, days, address, navigation, buttons — because italic serif numerals are materially harder to scan.
+
+Small caps (`.eyebrow`, `.value-meta`, `.review-author`) carry generous tracking, .17–.28em. This is where Diana's "more space between letters" request lives. It cannot go on Balmoral.
+
+### Scale
+
+| Element | Size | Line height |
+|---|---|---|
+| Hero title | `clamp(3.4rem, 8vw, 10.5rem)` | .84 |
+| Section title | `clamp(2.9rem, 7vw, 5.6rem)` | .88 |
+| Info title | `clamp(2.2rem, 4vw, 3.2rem)` | 1.0 |
+| Body | `clamp(1rem, .55vw + .88rem, 1.1875rem)` | 1.62 |
+
+Display sizes are deliberately large — Diana asked for double, and the reference hero is proportionally huge. This exceeds typical guidance on purpose.
 
 ---
 
-## 5. Content & Tone
+## 4. Layout and components
 
-### Copywriting Laws
+The reference is **flat and editorial**. Specifically:
 
-1. **Be Intuitive:** Use empathetic language. ("We are here for you" / "Aquí estamos para ti").
-2. **Highlight the Vibe:** Don't just list services; describe the experience of being in the space.
-3. **Bilingual Equity:** English and Spanish translations should feel equally native and prominent, never automated or secondary.
-4. **Action-Oriented but Gentle:** CTAs should be invitations ("Come visit us" / "Ven a visitarnos") rather than demands ("BOOK NOW").
+- **No cards.** No borders, no drop shadows, no elevated surfaces, no rounded containers. The philosophy section is five bare text columns on white. This is the single biggest departure from v1 and it is not negotiable.
+- **Buttons** are chamfered plaques — `clip-path` cutting all four corners at 11px. Bronze fill, cream text, Alegreya Bold Italic. Not rounded rectangles.
+- **Sacred geometry** line art in `--gold` heads each philosophy column and forms the footer rule. Inline SVG, `stroke-width: .8`, sources in `assets/symbols/`.
+- **Hero** is a two-column grid: flat `--mint-hero` panel left, full-bleed photograph right, no header above it. A 9% gradient softens the seam.
+- **Instagram** is an inline text link in the prose plus a small footer icon. Never a prominent block — it is the only link that sends visitors away.
+- **Spacing** runs on an 8px base, `--sp-1` through `--sp-6`.
 
 ---
-*End of Document*
+
+## 5. Known open items
+
+- Body column is `--measure: 34em`, which measures ~94 characters in Alegreya Italic. Comfortable reading is 65–75. Reducing to ~26em is an open change.
+- Small-caps eyebrows currently appear on three sections. The reference uses one, on the philosophy section only.
+- Colours are hex, not OKLCH.
+- The site has almost no motion beyond hover transitions.
+- Gallery and about photography are Diana's real images. The hero is generated and should be replaced when she supplies real work.
+
+---
+
+*Supersedes DIANA_DESIGN_SYSTEM.md v1.0.0 (2026-02-25).*

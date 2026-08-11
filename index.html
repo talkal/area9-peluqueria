@@ -1,246 +1,355 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área 9 Peluquería</title>
+    <title>Área 9 Peluquería — Madrid</title>
     <meta name="description"
-        content="Intuitive, creative space where hairdressing meets art, community, and personal peace in Madrid.">
+        content="Área 9. Peluquería creativa en el centro de Madrid. Un espacio intuitivo donde la belleza se encuentra con la paz personal.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="assets/fonts/balmoral-a9.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/alegreya-italic.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=1.0.4">
+    <link rel="stylesheet" href="css/styles.css?v=2.0.0">
 </head>
 
 <body>
-    <header class="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">
-                <span class="logo-area">Área 9</span>
-                <span class="logo-sub">Peluquería</span>
-            </a>
-            <div class="lang-toggle" role="group" aria-label="Language selector">
-                <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
-                <div class="lang-divider"></div>
-                <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-            </div>
-        </div>
-    </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-bg"></div>
-            <div class="container hero-content">
-                <h1 id="hero-title" class="hero-title" data-i18n="heroTitle">Esculpimos tu cabello</h1>
-                <p class="hero-subtitle" data-i18n="heroSubtitle">Un espacio intuitivo donde la belleza se encuentra con
-                    la paz personal.</p>
-                <a href="#schedule" class="btn-primary" data-i18n="bookBtn">Ven a visitarnos</a>
+
+        <!-- =================================================================
+             Hero — panel mint plano + fotografía a sangre, sin cabecera
+             ================================================================= -->
+        <section class="hero" aria-labelledby="heroTitle">
+            <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+                <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+                <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+
+            <div class="hero-content">
+                <h1 id="heroTitle" class="display hero-title">
+                    <span class="hero-l1"><span data-i18n="heroLine1">esculpimos</span></span>
+                    <span class="hero-l2"><span data-i18n="heroLine2">tu </span><span class="tc"
+                            data-i18n="heroCap">C</span><span data-i18n="heroLine3">abello</span></span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">Un espacio intuitivo donde la belleza se
+                    encuentra con la paz personal.</p>
+                <a href="#contacto" class="btn" data-i18n="bookBtn">Reserva tu cita</a>
+            </div>
+
+            <div class="hero-media">
+                <picture>
+                    <source srcset="assets/hero.webp" type="image/webp">
+                    <img src="assets/hero.jpg" alt="Trabajo de color y corte en Área 9" fetchpriority="high"
+                        width="1920" height="1440">
+                </picture>
             </div>
         </section>
 
-        <!-- About/Vibe Section -->
-        <section class="about section-padding" id="about">
+        <!-- =================================================================
+             Tu esencia expresada
+             ================================================================= -->
+        <section class="section about" id="nosotros">
             <div class="container about-grid">
-                <div class="about-text">
-                    <h2 class="section-title" data-i18n="aboutTitle">Tu esencia, expresada</h2>
-                    <p data-i18n="aboutP1">Aquí no solo hacemos cortes de pelo; creamos experiencias adaptadas a tu
-                        energía. Diana lidera este proyecto con una visión libre y creativa, guiada por la intuición
-                        para encontrar el estilo que realmente habla de ti.</p>
-                    <p data-i18n="aboutP2">Sumérgete en un oasis de calma para relajarte, conversar y renovar tu estilo.</p>
-                    <p data-i18n="aboutP3">Además, Área 9 es un espacio vivo: de vez en cuando organizamos eventos,
-                        obras de teatro y talleres de aromaterapia. ¡Sigue nuestro Instagram para estar informado!</p>
+                <div class="prose">
+                    <h2 class="display section-title">
+                        <span class="ti" data-i18n="aboutTitleInitial">t</span><span
+                            data-i18n="aboutTitleRest">u esencia</span><br>
+                        <span data-i18n="aboutTitleLine2">expresada</span>
+                    </h2>
+                    <p data-i18n="aboutP1">Área 9 nace con la idea de ir más allá del servicio convencional.</p>
+                    <p data-i18n="aboutP2">Bajo la dirección creativa de Diana, buscamos propuestas
+                        personalizadas que se adapten a tu estilo de vida y realcen tu identidad de manera
+                        natural.</p>
+                    <p data-i18n="aboutP3">Un espacio tranquilo y acogedor concebido para pausar el ritmo
+                        diario mientras cuidamos de tu cabello.</p>
+                    <p data-i18n="aboutP4">Además, Área 9 es un punto de encuentro dinámico: organizamos
+                        periódicamente talleres de bienestar, eventos culturales y de artes escénicas.</p>
+                    <p>
+                        <a class="link-underline" href="https://www.instagram.com/area_9peluqueria/"
+                            target="_blank" rel="noopener noreferrer" data-i18n="instaLink">Entérate de todo en
+                            Instagram.</a>
+                    </p>
                 </div>
-                <!-- Placeholder for image of the interior with red/teal chairs -->
-                <div class="about-image-wrapper">
-                    <img src="assets/Pelu%201.jpg" alt="Interior de la peluquería con plantas y decoración vintage"
-                        class="about-img" loading="lazy">
+
+                <div class="about-media">
+                    <img src="assets/Pelu%201.jpg" alt="Interior del salón Área 9" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- Philosophy/Values Section -->
-        <section class="philosophy section-padding" id="philosophy">
+        <!-- =================================================================
+             Nuestra filosofía — sin tarjetas, con geometría sagrada
+             ================================================================= -->
+        <section class="section philosophy" id="filosofia">
             <div class="container">
-                <div class="section-header center">
-                    <h2 class="section-title" data-i18n="philosophyTitle">nuestra filosofía</h2>
-                    <p class="section-subtitle" data-i18n="philosophySubtitle">Los cinco pilares que definen tu experiencia en Área 9.</p>
-                </div>
+                <h2 class="eyebrow" data-i18n="philosophyEyebrow">Nuestra filosofía</h2>
+
                 <div class="values-grid">
-                    <div class="value-card">
-                        <div class="value-icon">✧</div>
-                        <h3 class="value-title" data-i18n="value1Title">intuición</h3>
-                        <p class="value-desc" data-i18n="value1Desc">Diana lee tu energía y personalidad para esculpir el estilo que realmente habla de ti.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">✧</div>
-                        <h3 class="value-title" data-i18n="value2Title">creatividad y transformación</h3>
-                        <p class="value-desc" data-i18n="value2Desc">El estilismo como un arte vivo que renueva tu imagen exterior y eleva tu espíritu interior.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">✧</div>
-                        <h3 class="value-title" data-i18n="value3Title">relajación</h3>
-                        <p class="value-desc" data-i18n="value3Desc">Un pequeño oasis lleno de plantas, té caliente y calma para desconectar del ritmo de Madrid.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">✧</div>
-                        <h3 class="value-title" data-i18n="value4Title">armonía</h3>
-                        <p class="value-desc" data-i18n="value4Desc">La mezcla equilibrada entre decoración retro, naturaleza y tu propia expresión personal.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">✧</div>
-                        <h3 class="value-title" data-i18n="value5Title">comunicación</h3>
-                        <p class="value-desc" data-i18n="value5Desc">Un diálogo abierto, cercano y bilingüe para que te sientas escuchado de principio a fin.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Schedule & Contact Section -->
-        <section class="info-section section-padding" id="schedule">
-            <div class="container">
-                <div class="info-grid">
-                    <!-- Schedule Card -->
-                    <div class="card schedule-card">
-                        <h3 class="card-title" data-i18n="scheduleTitle">Horarios</h3>
-                        <ul class="schedule-list">
-                            <li>
-                                <span class="day" data-i18n="dayMon">Lunes, Miércoles</span>
-                                <span class="hours">12:00 - 14:00 | 16:00 - 19:30</span>
-                            </li>
-                            <li>
-                                <span class="day" data-i18n="dayTue">Martes, Jueves</span>
-                                <span class="hours">10:00 - 14:00 | 16:00 - 19:30</span>
-                            </li>
-                            <li>
-                                <span class="day" data-i18n="dayFri">Viernes</span>
-                                <span class="hours">10:00 - 14:00</span>
-                            </li>
-                            <li>
-                                <span class="day" data-i18n="daySatSun">Sábados y Domingos</span>
-                                <span class="hours closed" data-i18n="closed">Cerrado para descansar</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Contact Card -->
-                    <div class="card contact-card">
-                        <h3 class="card-title" data-i18n="contactTitle">Encuéntranos</h3>
-                        <p class="contact-desc" data-i18n="contactDesc">Ubicados en el corazón de Madrid.</p>
-                        <address class="address-block">
-                            <strong>Área 9 Peluquería</strong><br>
-                            <a href="https://www.google.com/maps/place/%C3%81rea+9/@40.4268954,-3.711697,17z/data=!3m1!4b1!4m6!3m5!1s0xd422864612d0a27:0x797c839ec5b0ac95!8m2!3d40.4268913!4d-3.7091167!16s%2Fg%2F1tfc39_r"
-                                target="_blank" rel="noopener noreferrer" class="link-primary"
-                                aria-label="Abrir en Google Maps">Calle de la Palma, 78, Centro Madrid</a><br>
-                            <a href="tel:+34646902787" class="link-primary">+34 646 902 787</a>
-                        </address>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/area_9peluqueria/" target="_blank"
-                                rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-instagram">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                </svg>
-                                <span>@area_9peluqueria</span>
-                            </a>
+                    <div class="value">
+                        <div class="value-symbol" aria-hidden="true">
+                            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8">
+                                <circle cx="100" cy="100" r="62" />
+                                <circle cx="100" cy="100" r="46" />
+                                <ellipse cx="100" cy="100" rx="62" ry="22" />
+                                <ellipse cx="100" cy="100" rx="62" ry="22" transform="rotate(30 100 100)" />
+                                <ellipse cx="100" cy="100" rx="62" ry="22" transform="rotate(60 100 100)" />
+                                <ellipse cx="100" cy="100" rx="62" ry="22" transform="rotate(90 100 100)" />
+                                <ellipse cx="100" cy="100" rx="62" ry="22" transform="rotate(120 100 100)" />
+                                <ellipse cx="100" cy="100" rx="62" ry="22" transform="rotate(150 100 100)" />
+                                <circle cx="100" cy="100" r="6" />
+                            </svg>
                         </div>
+                        <h3 class="value-title" data-i18n="v1t">Intuición</h3>
+                        <p class="value-sub" data-i18n="v1s">Leer lo que te sienta</p>
+                        <p class="value-meta" data-i18n="v1m">Estudiamos tus facciones y tu estilo personal</p>
+                    </div>
+
+                    <div class="value">
+                        <div class="value-symbol" aria-hidden="true">
+                            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8"
+                                stroke-linejoin="round">
+                                <circle cx="100" cy="100" r="62" />
+                                <polygon points="100,38 154,69 154,131 100,162 46,131 46,69" />
+                                <polygon points="100,62 133,81 133,119 100,138 67,119 67,81" />
+                                <polygon points="100,62 133,119 67,119" />
+                                <polygon points="100,138 67,81 133,81" />
+                            </svg>
+                        </div>
+                        <h3 class="value-title" data-i18n="v2t">Creatividad</h3>
+                        <p class="value-sub" data-i18n="v2s">y técnica</p>
+                        <p class="value-meta" data-i18n="v2m">El estilismo como disciplina artística</p>
+                    </div>
+
+                    <div class="value">
+                        <div class="value-symbol" aria-hidden="true">
+                            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8"
+                                stroke-linejoin="round">
+                                <rect x="46" y="46" width="108" height="108" />
+                                <circle cx="100" cy="100" r="54" />
+                                <polygon points="100,52 142,126 58,126" />
+                                <polygon points="100,148 58,74 142,74" />
+                                <circle cx="100" cy="100" r="5" />
+                            </svg>
+                        </div>
+                        <h3 class="value-title" data-i18n="v3t">Bienestar</h3>
+                        <p class="value-sub" data-i18n="v3s">Un oasis de calma</p>
+                        <p class="value-meta" data-i18n="v3m">Atención individualizada lejos de la prisa</p>
+                    </div>
+
+                    <div class="value">
+                        <div class="value-symbol" aria-hidden="true">
+                            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8">
+                                <circle cx="100" cy="100" r="62" />
+                                <circle cx="100" cy="100" r="21" />
+                                <circle cx="100" cy="79" r="21" />
+                                <circle cx="100" cy="121" r="21" />
+                                <circle cx="118" cy="89.5" r="21" />
+                                <circle cx="118" cy="110.5" r="21" />
+                                <circle cx="82" cy="89.5" r="21" />
+                                <circle cx="82" cy="110.5" r="21" />
+                            </svg>
+                        </div>
+                        <h3 class="value-title" data-i18n="v4t">Armonía</h3>
+                        <p class="value-sub" data-i18n="v4s">Estética y naturaleza</p>
+                        <p class="value-meta" data-i18n="v4m">Equilibrio entre lo retro y lo vegetal</p>
+                    </div>
+
+                    <div class="value">
+                        <div class="value-symbol" aria-hidden="true">
+                            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8"
+                                stroke-linejoin="round">
+                                <circle cx="100" cy="100" r="62" />
+                                <circle cx="82" cy="100" r="40" />
+                                <circle cx="118" cy="100" r="40" />
+                                <polygon points="100,55 138,122 62,122" />
+                                <polygon points="100,145 62,78 138,78" />
+                            </svg>
+                        </div>
+                        <h3 class="value-title" data-i18n="v5t">Comunicación</h3>
+                        <p class="value-sub" data-i18n="v5s">Diálogo bilingüe</p>
+                        <p class="value-meta" data-i18n="v5m">Para comprender el resultado que deseas</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Reviews Section -->
-        <section class="reviews-section section-padding" id="reviews">
+        <!-- =================================================================
+             Cita destacada — la mejor reseña, a tamaño de titular
+             ================================================================= -->
+        <section class="section pullquote" aria-label="Reseña destacada">
             <div class="container">
-                <div class="section-header center">
-                    <h2 class="section-title" data-i18n="reviewsTitle">Lo que dicen de nosotros</h2>
+                <blockquote>
+                    <p class="display pullquote-text" data-i18n="pullQuote">una burbuja de calma en la
+                        gran ciudad</p>
+                    <cite class="pullquote-cite" data-i18n="pullQuoteCite">Cliente desde hace 12 años</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             Horarios y contacto
+             ================================================================= -->
+        <section class="section info" id="contacto">
+            <div class="container info-grid">
+                <div>
+                    <h2 class="display title-md">
+                        <span class="ti" data-i18n="scheduleInitial">h</span><span
+                            data-i18n="scheduleRest">orarios</span>
+                    </h2>
+                    <p class="open-now" id="openNow" hidden></p>
+
+                    <ul class="schedule">
+                        <li>
+                            <span class="day" data-i18n="dayMon">Lunes y miércoles</span>
+                            <span class="hours">12:00–14:00 · 16:00–19:30</span>
+                        </li>
+                        <li>
+                            <span class="day" data-i18n="dayTue">Martes y jueves</span>
+                            <span class="hours">10:00–14:00 · 16:00–19:30</span>
+                        </li>
+                        <li>
+                            <span class="day" data-i18n="dayFri">Viernes</span>
+                            <span class="hours">10:00–14:00</span>
+                        </li>
+                        <li>
+                            <span class="day" data-i18n="daySatSun">Sábados y domingos</span>
+                            <span class="hours closed" data-i18n="closed">Cerrado</span>
+                        </li>
+                    </ul>
                 </div>
+
+                <div>
+                    <h2 class="display title-md">
+                        <span class="ti" data-i18n="findInitial">e</span><span
+                            data-i18n="findRest">ncuéntranos</span>
+                    </h2>
+                    <p data-i18n="contactDesc">En el corazón de Madrid, en pleno barrio de Malasaña.</p>
+                    <address class="address">
+                        <strong>Área 9 Peluquería</strong><br>
+                        <a class="link-underline"
+                            href="https://www.google.com/maps/place/%C3%81rea+9/@40.4268954,-3.711697,17z/data=!3m1!4b1!4m6!3m5!1s0xd422864612d0a27:0x797c839ec5b0ac95!8m2!3d40.4268913!4d-3.7091167!16s%2Fg%2F1tfc39_r"
+                            target="_blank" rel="noopener noreferrer">Calle de la Palma 78, Madrid</a><br>
+                        <a class="link-underline" href="tel:+34646902787">+34 646 902 787</a>
+                    </address>
+                    <a href="tel:+34646902787" class="btn" data-i18n="callBtn">Llámanos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             Reseñas
+             ================================================================= -->
+        <section class="section reviews" id="resenas">
+            <div class="container">
+                <h2 class="display title-md">
+                    <span class="ti" data-i18n="reviewsInitial">l</span><span
+                        data-i18n="reviewsRest">o que dicen de nosotros</span>
+                </h2>
+
                 <div class="reviews-grid">
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">
-                            "Llevo viniendo a esta mágica peluquería mas de 12 años. Y digo mágica
-                            porque todo en ella está al detalle y te hace sentir de dentro de una burbuja de calma en la
-                            gran ciudad. Empezando por Diana, que es maravillosa y una profesional de 10.<span
-                                class="review-more-text"> Es una artista
-                                que corta, pinta, ondula, alisa y cuida tu cabello con mimo y detalle. Ademas de ser una
-                                excelente maquilladora. También puedes encontrar actividades relacionadas con arte, como
-                                pequeñas obras de teatro y otros eventos. El ambiente de la peluquería es divino,
-                                decorado
-                                con gusto y personalidad, un lugar diferente que presta un servicio de 10. Gracias Diana
-                                por
-                                tu magia"</span>
-                        </p>
-                        <button class="read-more-btn" onclick="this.parentElement.classList.toggle('expanded')">
-                            <span class="text-more" data-i18n="readMore">Leer más...</span>
-                            <span class="text-less" data-i18n="readLess">Leer menos...</span>
+                    <div class="review">
+                        <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <p class="review-text">Llevo viniendo a esta mágica peluquería más de 12 años. Y digo
+                            mágica porque todo en ella está al detalle y te hace sentir dentro de una burbuja
+                            de calma en la gran ciudad.<span class="review-more"> Empezando por Diana, que es
+                                maravillosa y una profesional de 10. Es una artista que corta, pinta, ondula,
+                                alisa y cuida tu cabello con mimo y detalle. El ambiente es divino, decorado
+                                con gusto y personalidad.</span></p>
+                        <button class="read-more" onclick="this.closest('.review').classList.toggle('expanded')">
+                            <span class="more" data-i18n="readMore">Leer más</span>
+                            <span class="less" data-i18n="readLess">Leer menos</span>
                         </button>
-                        <p class="review-author">- Cliente habitual</p>
+                        <p class="review-author" data-i18n="authorRegular">Cliente habitual</p>
                     </div>
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">"Really lovely place 💛 She refreshed my dreadlocks so well, can really
-                            recommend 😊"</p>
-                        <p class="review-author">- Google Review</p>
+
+                    <div class="review">
+                        <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <p class="review-text">Really lovely place. She refreshed my dreadlocks so well, can
+                            really recommend.</p>
+                        <p class="review-author">Google Review</p>
                     </div>
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">"The best hair-dresser in madrid by far. I cut my hair in Diana's place
-                            for years and keep coming back when I'm in madrid. If your looking for fashionable, good
-                            taste hair-cut that's the address. And the salon is well designed, an experience."</p>
-                        <p class="review-author">- Google Review</p>
+
+                    <div class="review">
+                        <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <p class="review-text">The best hairdresser in Madrid by far. I cut my hair in Diana's
+                            place for years and keep coming back when I'm in Madrid. If you're looking for a
+                            fashionable, good taste haircut that's the address.</p>
+                        <p class="review-author">Google Review</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section class="gallery-section section-padding" id="gallery">
+        <!-- =================================================================
+             Galería
+             ================================================================= -->
+        <section class="section gallery" id="galeria">
             <div class="container">
-                <div class="section-header center">
-                    <h2 class="section-title" data-i18n="galleryTitle">Nuestras Creaciones</h2>
-                    <p class="section-subtitle" data-i18n="gallerySubtitle">Un vistazo a nuestro arte.</p>
-                </div>
+                <h2 class="display title-md">
+                    <span class="ti" data-i18n="galleryInitial">n</span><span
+                        data-i18n="galleryRest">uestras creaciones</span>
+                </h2>
 
-                <div class="masonry-grid" id="gallery-grid">
-                    <div class="masonry-item">
-                        <img src="assets/Creaciones%202.jpg" alt="Creación Área 9" loading="lazy">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="assets/Creaciones%203.webp" alt="Creación Área 9" loading="lazy">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="assets/Creaciones%204.webp" alt="Creación Área 9" loading="lazy">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="assets/Creaciones.jpg" alt="Creación Área 9" loading="lazy">
-                    </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="assets/Creaciones%202.jpg" alt="Creación Área 9"
+                            loading="lazy"></div>
+                    <div class="gallery-item"><img src="assets/Creaciones%203.webp" alt="Creación Área 9"
+                            loading="lazy"></div>
+                    <div class="gallery-item"><img src="assets/Creaciones%204.webp" alt="Creación Área 9"
+                            loading="lazy"></div>
+                    <div class="gallery-item"><img src="assets/Creaciones.jpg" alt="Creación Área 9"
+                            loading="lazy"></div>
                 </div>
             </div>
         </section>
 
     </main>
 
+    <!-- =====================================================================
+         Pie — cenefa de geometría sagrada
+         ===================================================================== -->
     <footer class="footer">
-        <div class="container footer-content">
-            <p data-i18n="footerRights">&copy; 2026 Área 9 Peluquería. Todos los derechos reservados.</p>
-            <p class="disclaimer" data-i18n="footerDisclaimer">Hecho con amor y creatividad.</p>
+        <div class="container">
+            <!-- El peine de la tarjeta del salón (pág. 1 del PDF de Marisol),
+                 reutilizado como cenefa del pie. -->
+            <div class="footer-rule" aria-hidden="true">
+                <svg viewBox="0 0 116 54" fill="currentColor">
+                    <path d="M3 6a6 6 0 0 1 6-6h98a6 6 0 0 1 6 6v12H3V6z" />
+                    <rect x="3" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="14.5" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="26" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="37.5" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="49" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="60.5" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="72" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="83.5" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="95" y="16" width="7" height="34" rx="3.5" />
+                    <rect x="106" y="16" width="7" height="34" rx="3.5" />
+                </svg>
+            </div>
+
+            <p class="display footer-mark">área 9</p>
+
+            <a class="social" href="https://www.instagram.com/area_9peluqueria/" target="_blank"
+                rel="noopener noreferrer" aria-label="Instagram de Área 9">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                <span>@area_9peluqueria</span>
+            </a>
+
+            <p class="footer-legal" data-i18n="footerLegal">© 2026 Área 9 Peluquería · Calle de la Palma 78,
+                Madrid</p>
         </div>
     </footer>
 
-    <!-- JS -->
-     <script src="js/i18n.js?v=1.0.3"></script>
+    <script src="js/i18n.js?v=2.0.0"></script>
 </body>
 
 </html>

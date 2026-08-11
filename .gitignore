@@ -1,0 +1,20 @@
+# Fuentes pesadas que no hacen falta en el repo.
+# Se conservan en local; no son necesarias para servir el sitio.
+
+# Referencia de diseño de Marisol (20 MB). El sitio no la usa.
+assets/ejemplos web diana.pdf
+
+# Original sin comprimir del hero (4.3 MB). Se sirven hero.webp y hero.jpg.
+assets/hero.png
+
+# TTF originales de Alegreya (3.2 MB). Se sirven los .woff2 de assets/fonts/.
+assets/alegreya/
+
+# Basura de macOS de los zips recibidos
+__MACOSX/
+._*
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini

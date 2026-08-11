@@ -1,162 +1,220 @@
 /**
- * i18n Dictionary and Logic for Área 9
+ * i18n — Área 9 Peluquería
  */
 
 const dict = {
     es: {
-        // Navigation & General
-        bookBtn: "Ven a visitarnos",
 
-        // Hero
-        heroTitle: "Esculpimos tu cabello",
+        heroLine1: "esculpimos",
+        heroLine2: "tu ",
+        heroCap: "C",
+        heroLine3: "abello",
         heroSubtitle: "Un espacio intuitivo donde la belleza se encuentra con la paz personal.",
+        bookBtn: "Reserva tu cita",
 
-        // About
-        aboutTitle: "Tu esencia, expresada",
-        aboutP1: "Área 9 nace con la idea de ir más allá del servicio convencional. Bajo la dirección creativa de Diana, buscamos propuestas personalizadas que se adapten a tu estilo de vida y realcen tu identidad de manera natural.",
-        aboutP2: "Un espacio tranquilo y acogedor concebido para pausar el ritmo diario mientras cuidamos de tu cabello.",
-        aboutP3: "Además, Área 9 es un punto de encuentro dinámico: organizamos periódicamente talleres de bienestar, eventos culturales y de artes escénicas. Síguenos en Instagram para enterarte de todo.",
+        aboutTitleInitial: "t",
+        aboutTitleRest: "u esencia",
+        aboutTitleLine2: "expresada",
+        aboutP1: "Área 9 nace con la idea de ir más allá del servicio convencional.",
+        aboutP2: "Bajo la dirección creativa de Diana, buscamos propuestas personalizadas que se adapten a tu estilo de vida y realcen tu identidad de manera natural.",
+        aboutP3: "Un espacio tranquilo y acogedor concebido para pausar el ritmo diario mientras cuidamos de tu cabello.",
+        aboutP4: "Además, Área 9 es un punto de encuentro dinámico: organizamos periódicamente talleres de bienestar, eventos culturales y de artes escénicas.",
+        instaLink: "Entérate de todo en Instagram.",
 
-        // Philosophy / Values
-        philosophyTitle: "nuestra filosofía",
-        philosophySubtitle: "Los pilares de la experiencia en Área 9",
-        value1Title: "intuición",
-        value1Desc: "Estudiamos tus facciones y estilo personal para diseñar un corte que se adapte de verdad a tu día a día.",
-        value2Title: "creatividad y técnica",
-        value2Desc: "Entendemos el estilismo como una disciplina artística apoyada en técnicas precisas y tendencias actuales.",
-        value3Title: "bienestar",
-        value3Desc: "Un ambiente de calma y atención individualizada pensado para desconectar de la prisa urbana.",
-        value4Title: "armonía",
-        value4Desc: "El equilibrio entre una cuidada estética retro, toques vegetales y tu propio espacio de expresión.",
-        value5Title: "comunicación",
-        value5Desc: "Un diálogo directo, cercano y bilingüe para comprender con exactitud el resultado que deseas.",
+        philosophyEyebrow: "Nuestra filosofía",
+        v1t: "Intuición", v1s: "Leer lo que te sienta", v1m: "Estudiamos tus facciones y tu estilo personal",
+        v2t: "Creatividad", v2s: "y técnica", v2m: "El estilismo como disciplina artística",
+        v3t: "Bienestar", v3s: "Un oasis de calma", v3m: "Atención individualizada lejos de la prisa",
+        v4t: "Armonía", v4s: "Estética y naturaleza", v4m: "Equilibrio entre lo retro y lo vegetal",
+        v5t: "Comunicación", v5s: "Diálogo bilingüe", v5m: "Para comprender el resultado que deseas",
 
-        // Schedule
-        scheduleTitle: "Horarios",
-        dayMon: "Lunes, Miércoles",
-        dayTue: "Martes, Jueves",
+        scheduleInitial: "h",
+        scheduleRest: "orarios",
+        dayMon: "Lunes y miércoles",
+        dayTue: "Martes y jueves",
         dayFri: "Viernes",
-        daySatSun: "Sábados y Domingos",
-        closed: "Cerrado para descansar",
+        daySatSun: "Sábados y domingos",
+        closed: "Cerrado",
 
-        // Contact
-        contactTitle: "Encuéntranos",
-        contactDesc: "Ubicados en el corazón de Madrid.",
+        findInitial: "e",
+        findRest: "ncuéntranos",
+        contactDesc: "En el corazón de Madrid, en pleno barrio de Malasaña.",
+        callBtn: "Llámanos",
 
-        // Reviews
-        reviewsTitle: "Lo que dicen de nosotros",
-        readMore: "Leer más...",
-        readLess: "Leer menos...",
+        pullQuote: "una burbuja de calma en la gran ciudad",
+        pullQuoteCite: "Cliente desde hace 12 años",
 
-        // Gallery
-        galleryTitle: "Nuestras Creaciones",
-        gallerySubtitle: "Un vistazo a nuestro arte.",
+        reviewsInitial: "l",
+        reviewsRest: "o que dicen de nosotros",
+        readMore: "Leer más",
+        readLess: "Leer menos",
+        authorRegular: "Cliente habitual",
 
-        // Footer
-        footerRights: "© 2026 Área 9 Peluquería. Todos los derechos reservados.",
-        footerDisclaimer: "Estilismo, arte y bienestar."
+        galleryInitial: "n",
+        galleryRest: "uestras creaciones",
+        footerLegal: "© 2026 Área 9 Peluquería · Calle de la Palma 78, Madrid"
     },
+
     en: {
-        // Navigation & General
-        bookBtn: "Come visit us",
 
-        // Hero
-        heroTitle: "We sculpt your hair",
+        heroLine1: "we sculpt",
+        heroLine2: "your ",
+        heroCap: "H",
+        heroLine3: "air",
         heroSubtitle: "An intuitive space where beauty meets personal peace.",
+        bookBtn: "Book your visit",
 
-        // About
-        aboutTitle: "Your essence, expressed",
-        aboutP1: "Área 9 was born to go beyond a conventional service. Under Diana's creative direction, we focus on personalized styles that adapt to your lifestyle and naturally enhance your identity.",
-        aboutP2: "A calm and welcoming space designed to pause the daily rush while we care for your hair.",
-        aboutP3: "Additionally, Área 9 is a dynamic meeting point: we regularly host wellness workshops, cultural events, and performing arts. Follow us on Instagram to stay updated.",
+        aboutTitleInitial: "y",
+        aboutTitleRest: "our essence,",
+        aboutTitleLine2: "expressed",
+        aboutP1: "Área 9 was born from the idea of going beyond the conventional service.",
+        aboutP2: "Under Diana's creative direction, we look for personalised proposals that suit your way of life and bring out your identity naturally.",
+        aboutP3: "A calm, welcoming space conceived to pause the daily rhythm while we take care of your hair.",
+        aboutP4: "Área 9 is also a living meeting point: we regularly host wellbeing workshops, cultural events and performing arts.",
+        instaLink: "Follow everything on Instagram.",
 
-        // Philosophy / Values
-        philosophyTitle: "our philosophy",
-        philosophySubtitle: "The core pillars defining your experience at Área 9",
-        value1Title: "intuition",
-        value1Desc: "We study your features and personal style to design a haircut that truly fits your daily life.",
-        value2Title: "creativity & technique",
-        value2Desc: "We approach hairdressing as an artistic discipline backed by precise techniques and current trends.",
-        value3Title: "well-being",
-        value3Desc: "A peaceful environment with individualized attention designed to disconnect from the urban rush.",
-        value4Title: "harmony",
-        value4Desc: "A balanced blend of curated retro aesthetics, botanical touches, and your own personal expression.",
-        value5Title: "communication",
-        value5Desc: "A direct, close, and bilingual dialogue to understand exactly the result you are looking for.",
+        philosophyEyebrow: "Our philosophy",
+        v1t: "Intuition", v1s: "Reading what suits you", v1m: "We study your features and personal style",
+        v2t: "Creativity", v2s: "and craft", v2m: "Styling as an artistic discipline",
+        v3t: "Wellbeing", v3s: "An oasis of calm", v3m: "Individual attention away from the rush",
+        v4t: "Harmony", v4s: "Aesthetics and nature", v4m: "Balance between the retro and the botanical",
+        v5t: "Communication", v5s: "Bilingual dialogue", v5m: "To understand exactly the result you want",
 
-        // Schedule
-        scheduleTitle: "Schedule",
-        dayMon: "Monday, Wednesday",
-        dayTue: "Tuesday, Thursday",
+        scheduleInitial: "o",
+        scheduleRest: "pening hours",
+        dayMon: "Monday & Wednesday",
+        dayTue: "Tuesday & Thursday",
         dayFri: "Friday",
-        daySatSun: "Saturdays and Sundays",
-        closed: "Closed to rest",
+        daySatSun: "Saturday & Sunday",
+        closed: "Closed",
 
-        // Contact
-        contactTitle: "Find Us",
-        contactDesc: "Located in the heart of Madrid.",
+        findInitial: "f",
+        findRest: "ind us",
+        contactDesc: "In the heart of Madrid, in the Malasaña quarter.",
+        callBtn: "Call us",
 
-        // Reviews
-        reviewsTitle: "What people say",
-        readMore: "Read more...",
-        readLess: "Read less...",
+        pullQuote: "a bubble of calm in the big city",
+        pullQuoteCite: "Client for 12 years",
 
-        // Gallery
-        galleryTitle: "Our Creations",
-        gallerySubtitle: "A glimpse into our art.",
+        reviewsInitial: "w",
+        reviewsRest: "hat people say",
+        readMore: "Read more",
+        readLess: "Read less",
+        authorRegular: "Regular client",
 
-        // Footer
-        footerRights: "© 2026 Área 9 Peluquería. All rights reserved.",
-        footerDisclaimer: "Hairdressing, art, and well-being."
+        galleryInitial: "o",
+        galleryRest: "ur creations",
+        footerLegal: "© 2026 Área 9 Peluquería · Calle de la Palma 78, Madrid"
     }
 };
 
 /**
- * Initializes language toggle logic
+ * Horario de apertura — misma fuente de datos que la lista de la página.
+ * Índice = getDay() de JS (0 domingo). Cada turno es [inicio, fin] en minutos.
  */
-document.addEventListener("DOMContentLoaded", () => {
-    const langButtons = document.querySelectorAll('.lang-btn');
-    const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+const SCHEDULE = {
+    0: [],                              // domingo
+    1: [[720, 840], [960, 1170]],       // lunes     12:00-14:00 · 16:00-19:30
+    2: [[600, 840], [960, 1170]],       // martes    10:00-14:00 · 16:00-19:30
+    3: [[720, 840], [960, 1170]],       // miércoles
+    4: [[600, 840], [960, 1170]],       // jueves
+    5: [[600, 840]],                    // viernes   10:00-14:00
+    6: []                               // sábado
+};
 
-    // Default lang is 'es', but we can check localStorage in the future.
-    let currentLang = 'es';
+const OPEN_STRINGS = {
+    es: {
+        openUntil: h => `Abierto ahora · hasta las ${h}`,
+        opensAt: (d, h) => `Cerrado · abre el ${d} a las ${h}`,
+        opensToday: h => `Cerrado · abre hoy a las ${h}`,
+        days: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"]
+    },
+    en: {
+        openUntil: h => `Open now · until ${h}`,
+        opensAt: (d, h) => `Closed · opens ${d} at ${h}`,
+        opensToday: h => `Closed · opens today at ${h}`,
+        days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    }
+};
+
+function fmt(mins) {
+    return String(Math.floor(mins / 60)).padStart(2, "0") + ":" + String(mins % 60).padStart(2, "0");
+}
+
+function renderOpenNow(lang) {
+    const el = document.getElementById("openNow");
+    if (!el) return;
+    const s = OPEN_STRINGS[lang] || OPEN_STRINGS.es;
+    const now = new Date();
+    const today = now.getDay();
+    const mins = now.getHours() * 60 + now.getMinutes();
+
+    for (const [start, end] of SCHEDULE[today] || []) {
+        if (mins >= start && mins < end) {
+            el.textContent = s.openUntil(fmt(end));
+            el.classList.add("is-open");
+            el.hidden = false;
+            return;
+        }
+    }
+
+    // Siguiente turno hoy
+    const later = (SCHEDULE[today] || []).find(([start]) => mins < start);
+    el.classList.remove("is-open");
+    if (later) {
+        el.textContent = s.opensToday(fmt(later[0]));
+        el.hidden = false;
+        return;
+    }
+
+    // Siguiente día con turnos
+    for (let i = 1; i <= 7; i++) {
+        const d = (today + i) % 7;
+        if ((SCHEDULE[d] || []).length) {
+            el.textContent = s.opensAt(s.days[d], fmt(SCHEDULE[d][0][0]));
+            el.hidden = false;
+            return;
+        }
+    }
+    el.hidden = true;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".lang-btn");
+    const nodes = document.querySelectorAll("[data-i18n]");
 
     function setLanguage(lang) {
         if (!dict[lang]) return;
-        currentLang = lang;
-
-        // Update DOM html lang attribute
         document.documentElement.lang = lang;
 
-        // Update Text Content
-        elementsToTranslate.forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (dict[lang][key]) {
-                el.textContent = dict[lang][key];
-            }
+        nodes.forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            const value = dict[lang][key];
+            if (value !== undefined) el.textContent = value;
         });
 
-        // Update active class on buttons
-        langButtons.forEach(btn => {
-            const btnLang = btn.getAttribute('data-lang');
-            if (btnLang === lang) {
-                btn.classList.add('active');
-                btn.setAttribute('aria-pressed', 'true');
-            } else {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-pressed', 'false');
-            }
+        buttons.forEach(btn => {
+            const active = btn.getAttribute("data-lang") === lang;
+            btn.classList.toggle("active", active);
+            btn.setAttribute("aria-pressed", String(active));
         });
+
+        renderOpenNow(lang);
+
+        try { localStorage.setItem("a9-lang", lang); } catch (e) { /* no-op */ }
     }
 
-    // Assign event listeners
-    langButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const selectedLang = e.target.getAttribute('data-lang');
-            setLanguage(selectedLang);
-        });
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => setLanguage(btn.getAttribute("data-lang")));
     });
 
-    // Initial setting
-    setLanguage(currentLang);
+    // El salón está en Madrid y su clientela es española: el castellano manda.
+    // Sólo se respeta la elección explícita del visitante.
+    let initial = "es";
+    try {
+        const saved = localStorage.getItem("a9-lang");
+        if (saved && dict[saved]) initial = saved;
+    } catch (e) { /* no-op */ }
+
+    setLanguage(initial);
 });

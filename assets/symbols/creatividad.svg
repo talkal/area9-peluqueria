@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
+  <g opacity="0.95">
+    <circle cx="100" cy="100" r="62"/>
+    <!-- icosahedron / metatron-style polyhedron -->
+    <polygon points="100,38 154,69 154,131 100,162 46,131 46,69"/>
+    <polygon points="100,62 133,81 133,119 100,138 67,119 67,81"/>
+    <line x1="100" y1="38" x2="100" y2="62"/>
+    <line x1="154" y1="69" x2="133" y2="81"/>
+    <line x1="154" y1="131" x2="133" y2="119"/>
+    <line x1="100" y1="162" x2="100" y2="138"/>
+    <line x1="46" y1="131" x2="67" y2="119"/>
+    <line x1="46" y1="69" x2="67" y2="81"/>
+    <polygon points="100,62 133,119 67,119"/>
+    <polygon points="100,138 67,81 133,81"/>
+  </g>
+</svg>
