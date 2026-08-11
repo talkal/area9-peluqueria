@@ -12,7 +12,7 @@
     <link rel="preload" href="assets/fonts/balmoral-a9-wide.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-italic.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="css/styles.css?v=2.1.0">
+    <link rel="stylesheet" href="css/styles.css?v=2.6.0">
 
     <!-- En el head y sin defer: la clase debe estar antes del primer pintado
          para que el barrido no arranque a medias. -->
@@ -83,6 +83,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- =================================================================
              Nuestra filosofía — sin tarjetas, con geometría sagrada
@@ -292,8 +293,10 @@
              Diana ya publica ahí sus talleres: el sitio hereda ese hábito
              en vez de crearle uno nuevo, y nada se queda desactualizado.
 
-             El iframe sólo se inyecta tras el consentimiento (js/instagram.js).
-             Sin aceptar, se ve el enlace directo y nada más.
+             Las publicaciones llegan por el feed JSON de Behold y se pintan
+             con nuestra propia rejilla (js/instagram.js). Sin script de
+             terceros ni cookies: las imágenes salen del CDN de Behold.
+             Si la petición falla, queda el enlace al perfil.
              ================================================================= -->
         <section class="section instagram" id="instagram">
             <div class="container">
@@ -304,19 +307,16 @@
                 <p class="lede ig-lede" data-i18n="igLede">Talleres, eventos y trabajos recientes. Lo
                     contamos todo en Instagram.</p>
 
-                <div class="ig-frame" id="igFrame" data-handle="area_9peluqueria">
-                    <div class="ig-consent" id="igConsent">
-                        <p data-i18n="igConsentText">Para ver las publicaciones aquí hay que cargar
-                            contenido de Instagram, que instala sus propias cookies.</p>
-                        <div class="ig-consent-actions">
-                            <button type="button" class="btn btn-sm" id="igAccept"
-                                data-i18n="igAccept">Cargar Instagram</button>
-                            <a class="link-underline" href="https://www.instagram.com/area_9peluqueria/"
-                                target="_blank" rel="noopener noreferrer" data-i18n="igOpen">Verlo en
-                                Instagram</a>
-                        </div>
-                    </div>
+                <!-- data-feed: sustituir por el ID del feed JSON de Behold.
+                     Hasta entonces la sección se queda con el enlace al perfil. -->
+                <div class="ig-frame" id="igFeed" data-feed="0V4mzDE8sKl7VSzBM1H3">
+                    <div class="ig-grid"></div>
                 </div>
+
+                <p class="ig-link">
+                    <a class="link-underline" href="https://www.instagram.com/area_9peluqueria/"
+                        target="_blank" rel="noopener noreferrer" data-i18n="igOpen">@area_9peluqueria</a>
+                </p>
             </div>
         </section>
 
@@ -387,6 +387,7 @@
     </footer>
 
     <script src="js/i18n.js?v=2.0.0"></script>
+    <script src="js/instagram.js?v=3.0.0" defer></script>
 </body>
 
 </html>

@@ -321,6 +321,24 @@ p + p {
     overflow: clip;
 }
 
+/* Grano de yeso sobre el panel mint.
+   El panel es un color plano y a pantalla completa se lee como un valor hex,
+   no como pared pintada. Un 4% de ruido le da materia.
+
+   Es TEXTURA, no una fotografía de fondo: no tiene motivo reconocible, así
+   que no compite con el texto ni rompe el contraste medido. Va en data-URI
+   (~300 bytes, cero peticiones) y por debajo de la foto y del texto. */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: .04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 190px 190px;
+}
+
 /* 48rem, no 42: el titular tiene que llegar a ~70% del panel como en la
    maqueta, y a ese tamaño "tu Cabello" más la sangría no cabía en 42rem. */
 .hero-content {
@@ -379,6 +397,8 @@ p + p {
 
 .hero-media {
     position: relative;
+    /* por encima del grano, que sólo debe verse en el panel plano */
+    z-index: 1;
     align-self: stretch;
     background: var(--mint-hero);
     overflow: clip;
@@ -754,55 +774,39 @@ p + p {
 }
 
 .ig-frame {
-    max-width: 540px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-/* Reserva de espacio antes de cargar: evita que el resto de la página
-   salte cuando entra el iframe. */
-.ig-consent {
-    min-height: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--sp-3);
-    padding: var(--sp-4) var(--sp-3);
+/* Rejilla propia: Behold da los datos, el diseño es nuestro. Sin marcos ni
+   sombras, igual que la galería. */
+.ig-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: clamp(10px, 1.4vw, 18px);
+}
+
+.ig-item {
+    display: block;
+    overflow: clip;
+    aspect-ratio: 1;
     background: var(--cream);
 }
 
-.ig-consent p {
-    max-width: 30em;
-    color: var(--ink-soft);
-    font-size: .95rem;
-    margin: 0;
-}
-
-.ig-consent-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--sp-2);
-}
-
-.btn-sm {
-    font-size: .95rem;
-    padding: 13px 32px;
-}
-
-.ig-embed iframe {
+.ig-item img {
     width: 100%;
-    min-height: 560px;
-    border: 0;
-    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s var(--ease);
 }
 
-/* --------------------------------------------------------------------------
-   Galería
-   -------------------------------------------------------------------------- */
-.gallery {
-    background: var(--white);
-    text-align: center;
+.ig-item:hover img {
+    transform: scale(1.05);
+}
+
+.ig-link {
+    margin-top: var(--sp-4);
+    font-size: .95rem;
 }
 
 .gallery-grid {

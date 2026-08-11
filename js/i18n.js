@@ -53,8 +53,6 @@ const dict = {
         igInitial: "e",
         igRest: "n el día a día",
         igLede: "Talleres, eventos y trabajos recientes. Lo contamos todo en Instagram.",
-        igConsentText: "Para ver las publicaciones aquí hay que cargar contenido de Instagram, que instala sus propias cookies.",
-        igAccept: "Cargar Instagram",
         igOpen: "Verlo en Instagram",
 
         galleryInitial: "n",
@@ -112,8 +110,6 @@ const dict = {
         igInitial: "d",
         igRest: "ay to day",
         igLede: "Workshops, events and recent work. We post it all on Instagram.",
-        igConsentText: "Showing the posts here means loading content from Instagram, which sets its own cookies.",
-        igAccept: "Load Instagram",
         igOpen: "Open on Instagram",
 
         galleryInitial: "o",
