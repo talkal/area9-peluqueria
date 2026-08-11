@@ -18,3 +18,7 @@ __MACOSX/
 # Windows
 Thumbs.db
 desktop.ini
+
+# Material de referencia que Diana envió por WhatsApp (3.6 MB).
+# No se sirve nada de aquí: son fuentes para generar, no assets del sitio.
+assets/reference/

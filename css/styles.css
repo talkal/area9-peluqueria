@@ -18,7 +18,11 @@
     src: url('../assets/fonts/balmoral-a9-wide.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    /* block, no swap. Con swap se veía un instante la fuente de reserva
+       (Cormorant/cursiva) antes de entrar Balmoral, y en un titular de 192px
+       el salto canta muchísimo. block da un breve periodo invisible y ya.
+       Son 26KB y va precargada en el <head>, así que la espera es mínima. */
+    font-display: block;
 }
 
 @font-face {
@@ -104,6 +108,11 @@
     --sp-6: 96px;
 
     --ease: cubic-bezier(.2, .6, .2, 1);
+    /* Curva para el barrido de escritura. La --ease normal está muy cargada
+       al principio: al 43% del tiempo ya iba por el 98% del recorrido, así
+       que daba un tirón y luego se arrastraba. Escribir a mano arranca,
+       mantiene un ritmo parejo y frena al final. */
+    --ease-write: cubic-bezier(.6, .04, .3, 1);
 }
 
 /* --------------------------------------------------------------------------
@@ -130,7 +139,11 @@ body {
     letter-spacing: .012em;
     color: var(--ink);
     background: var(--white);
-    overflow-x: hidden;
+    /* clip, no hidden. overflow-x: hidden obliga a overflow-y: auto, lo que
+       convierte el body en contenedor de scroll: view() pasa a resolverse
+       contra el body, que no scrollea, y todas las líneas de tiempo quedan
+       inactivas. clip recorta igual sin crear contenedor de scroll. */
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -303,19 +316,25 @@ p + p {
     grid-template-columns: 47fr 53fr;
     align-items: center;
     min-height: min(76vh, 680px);
-    overflow: hidden;
+    /* clip, no hidden: hidden crearía un contenedor de scroll y dejaría
+       inactivas las líneas de tiempo view() de la imagen del hero. */
+    overflow: clip;
 }
 
+/* 48rem, no 42: el titular tiene que llegar a ~70% del panel como en la
+   maqueta, y a ese tamaño "tu Cabello" más la sangría no cabía en 42rem. */
 .hero-content {
     padding: clamp(40px, 5vw, 64px) clamp(24px, 3.5vw, 52px);
-    max-width: 42rem;
+    max-width: 50rem;
     margin-left: auto;
     position: relative;
     z-index: 2;
 }
 
+/* 10vw lleva el bloque del titular al ~70% del ancho del panel, que es la
+   proporción medida en la página 2 de Marisol. Con 8vw se quedaba en 56%. */
 .hero-title {
-    font-size: clamp(3.4rem, 8vw, 10.5rem);
+    font-size: clamp(3.4rem, 10vw, 12rem);
     line-height: .84;
     margin-bottom: var(--sp-3);
     color: var(--bronze);
@@ -342,9 +361,12 @@ p + p {
     font-size: clamp(1.05rem, 1.5vw, 1.35rem);
     line-height: 1.5;
     color: var(--bronze);
-    max-width: 16em;
+    max-width: 22em;
     margin-bottom: var(--sp-4);
-    text-wrap: balance;
+    /* Sin text-wrap: balance a propósito. Balance igualaba las dos líneas y
+       dejaba el subtítulo mucho más estrecho que su max-width. En la maqueta
+       la primera línea es más larga que la segunda (1051 frente a 945). */
+    text-wrap: pretty;
 }
 
 /* Centrado bajo el bloque de texto, como en la maqueta, no alineado a la
@@ -359,7 +381,7 @@ p + p {
     position: relative;
     align-self: stretch;
     background: var(--mint-hero);
-    overflow: hidden;
+    overflow: clip;
 }
 
 /* Fuera del flujo. Con height:100% contra un padre de altura automática la
@@ -720,6 +742,62 @@ p + p {
 }
 
 /* --------------------------------------------------------------------------
+   Instagram
+   -------------------------------------------------------------------------- */
+.instagram {
+    background: var(--white);
+    text-align: center;
+}
+
+.ig-lede {
+    margin: 0 auto var(--sp-4);
+}
+
+.ig-frame {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+/* Reserva de espacio antes de cargar: evita que el resto de la página
+   salte cuando entra el iframe. */
+.ig-consent {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-3);
+    padding: var(--sp-4) var(--sp-3);
+    background: var(--cream);
+}
+
+.ig-consent p {
+    max-width: 30em;
+    color: var(--ink-soft);
+    font-size: .95rem;
+    margin: 0;
+}
+
+.ig-consent-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-2);
+}
+
+.btn-sm {
+    font-size: .95rem;
+    padding: 13px 32px;
+}
+
+.ig-embed iframe {
+    width: 100%;
+    min-height: 560px;
+    border: 0;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
    Galería
    -------------------------------------------------------------------------- */
 .gallery {
@@ -742,7 +820,8 @@ p + p {
 }
 
 .gallery-item {
-    overflow: hidden;
+    /* clip por el mismo motivo: hidden mataría el asentamiento de las fotos */
+    overflow: clip;
 }
 
 .gallery-item:hover img {
@@ -905,5 +984,253 @@ p + p {
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================================================
+   Movimiento ligado al scroll
+   --------------------------------------------------------------------------
+   Ligado, no disparado: el avance de cada animación depende de la posición
+   del scroll, así que responde al gesto en los dos sentidos. Un disparo por
+   umbral se ve como un pase de diapositivas.
+
+   CSS puro con animation-timeline: sin JS, sin IntersectionObserver, y fuera
+   del hilo principal, de modo que no puede dar tirones.
+
+   Todo va dentro de @supports: donde no haya soporte (Firefox lo mantiene
+   tras flag) no se anima nada y el contenido se ve en su estado final.
+   El estado por defecto de cada elemento es SIEMPRE el visible.
+   ========================================================================== */
+
+@property --wipe {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+}
+
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+
+        /* La fotografía del hero va más lenta que el panel plano.
+           El scale evita que el desplazamiento descubra los bordes.
+           Se mueve sólo cuando te mueves tú: no es una deriva automática. */
+        .hero-media img {
+            transform: scale(1.12);
+            animation: heroDrift linear both;
+            animation-timeline: view();
+        }
+
+        @keyframes heroDrift {
+            from { transform: translateY(-6%) scale(1.12); }
+            to   { transform: translateY(6%) scale(1.12); }
+        }
+
+        /* Los titulares se escriben. Una máscara de izquierda a derecha sobre
+           el texto ya compuesto: la Balmoral aparece como caligrafía.
+           Nunca letra a letra, eso rompería las uniones.
+
+           Se repite en todos los titulares a propósito: un gesto que vuelve
+           es una firma; usado una sola vez es un efecto suelto.
+
+           El titular del hero queda FUERA: está sobre el pliegue y no puede
+           empezar oculto. Tampoco tiene recorrido de scroll por delante. */
+        .pullquote-text,
+        .section-title,
+        .title-md,
+        .eyebrow,
+        .footer-mark {
+            -webkit-mask-image: linear-gradient(to right,
+                #000 calc(var(--wipe) - 9%), transparent var(--wipe));
+            mask-image: linear-gradient(to right,
+                #000 calc(var(--wipe) - 9%), transparent var(--wipe));
+            animation: wipeIn linear both;
+            animation-timeline: view();
+            /* cover, no entry: el rango entry se mide contra la ALTURA DEL
+               ELEMENTO, así que en una cita de 110px dentro de un viewport de
+               911px toda la fase entry ocupa un 11% del scroll y el barrido se
+               completaba de golpe. cover se mide contra el viewport. */
+            animation-range: cover 8% cover 42%;
+        }
+
+        @keyframes wipeIn {
+            from { --wipe: 0%; }
+            to   { --wipe: 112%; }
+        }
+
+        /* Geometría sagrada dibujándose. 460 supera el perímetro de
+           cualquier trazo del viewBox 200x200, así que las formas cortas
+           terminan antes: se completan escalonadas y queda más orgánico. */
+        .value-symbol svg > * {
+            stroke-dasharray: 460;
+            animation: drawStroke linear both;
+            animation-timeline: view();
+            animation-range: cover 8% cover 45%;
+        }
+
+        @keyframes drawStroke {
+            from { stroke-dashoffset: 460; }
+            to   { stroke-dashoffset: 0; }
+        }
+
+        /* Los dientes del peine bajan en cascada. Es lo último que se ve. */
+        .footer-rule svg rect {
+            transform-origin: 50% 0;
+            animation: teeth linear both;
+            animation-timeline: view();
+            animation-range: cover 12% cover 58%;
+        }
+
+        @keyframes teeth {
+            from { transform: scaleY(0); }
+            to   { transform: scaleY(1); }
+        }
+
+        .footer-rule svg rect:nth-of-type(2)  { animation-range: cover 15% cover 58%; }
+        .footer-rule svg rect:nth-of-type(3)  { animation-range: cover 18% cover 58%; }
+        .footer-rule svg rect:nth-of-type(4)  { animation-range: cover 21% cover 58%; }
+        .footer-rule svg rect:nth-of-type(5)  { animation-range: cover 24% cover 58%; }
+        .footer-rule svg rect:nth-of-type(6)  { animation-range: cover 27% cover 58%; }
+        .footer-rule svg rect:nth-of-type(7)  { animation-range: cover 30% cover 58%; }
+        .footer-rule svg rect:nth-of-type(8)  { animation-range: cover 33% cover 58%; }
+        .footer-rule svg rect:nth-of-type(9)  { animation-range: cover 36% cover 58%; }
+        .footer-rule svg rect:nth-of-type(10) { animation-range: cover 39% cover 58%; }
+
+        /* Las fotos se asientan, como una copia revelándose en la cubeta. */
+        .gallery-grid img,
+        .about-media img {
+            animation: settle linear both;
+            animation-timeline: view();
+            animation-range: cover 0% cover 50%;
+        }
+
+        @keyframes settle {
+            from { transform: scale(1.075); }
+            to   { transform: scale(1); }
+        }
+
+        /* El hover de la galería manda sobre el asentamiento */
+        .gallery-item:hover img {
+            animation: none;
+        }
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Entrada del hero
+   --------------------------------------------------------------------------
+   Mismo gesto que los demás titulares, pero sobre una línea de tiempo de
+   reloj en vez de scroll: la página se abre escribiendo su propio nombre y
+   a partir de ahí cada titular se escribe igual. Un gesto que vuelve es una
+   firma; el mismo gesto usado una sola vez es un efecto suelto.
+
+   La clase .is-ready la pone el JS SÓLO cuando document.fonts.ready ha
+   resuelto. Sin ella no hay máscara ni animación: si el JS falla o el
+   navegador no soporta nada de esto, el hero se ve tal cual.
+
+   La fotografía no entra aquí: ya lleva el parallax de scroll sobre
+   transform y dos animaciones sobre la misma propiedad se pisan. Dejarla
+   quieta protege además el Largest Contentful Paint.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+    .is-ready .hero-title {
+        -webkit-mask-image: linear-gradient(to right,
+            #000 calc(var(--wipe) - 9%), transparent var(--wipe));
+        mask-image: linear-gradient(to right,
+            #000 calc(var(--wipe) - 9%), transparent var(--wipe));
+        animation: wipeIn 1.4s var(--ease-write) both;
+    }
+
+    .is-ready .hero-subtitle {
+        animation: softIn .6s var(--ease) .75s both;
+    }
+
+    .is-ready .hero-content .btn {
+        animation: softIn .6s var(--ease) .95s both;
+    }
+
+    @keyframes softIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Pie — línea de tiempo propia
+   --------------------------------------------------------------------------
+   Un rango cover nunca se completa en el pie: exige que el elemento salga
+   por arriba del viewport y el pie es lo último del documento, así que se
+   queda a medias para siempre. Se veía el peine sin terminar de bajar y
+   "área 9" cortado por la mitad.
+
+   Solución: una línea de tiempo anclada al propio .footer y rangos entry,
+   que sí se completan cuando el pie entra entero en pantalla. Se usa el
+   footer como sujeto, y no cada elemento, porque mide ~350px: da recorrido
+   suficiente. Anclarlo a las piezas sueltas lo dejaría instantáneo.
+   -------------------------------------------------------------------------- */
+.footer {
+    view-timeline: --footerTl block;
+}
+
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .footer-mark {
+            animation-timeline: --footerTl;
+            animation-range: entry 40% entry 95%;
+        }
+
+        .footer-rule svg rect {
+            animation-timeline: --footerTl;
+            animation-range: entry 8% entry 62%;
+        }
+
+        .footer-rule svg rect:nth-of-type(2)  { animation-range: entry 12% entry 66%; }
+        .footer-rule svg rect:nth-of-type(3)  { animation-range: entry 16% entry 70%; }
+        .footer-rule svg rect:nth-of-type(4)  { animation-range: entry 20% entry 74%; }
+        .footer-rule svg rect:nth-of-type(5)  { animation-range: entry 24% entry 78%; }
+        .footer-rule svg rect:nth-of-type(6)  { animation-range: entry 28% entry 82%; }
+        .footer-rule svg rect:nth-of-type(7)  { animation-range: entry 32% entry 86%; }
+        .footer-rule svg rect:nth-of-type(8)  { animation-range: entry 36% entry 90%; }
+        .footer-rule svg rect:nth-of-type(9)  { animation-range: entry 40% entry 94%; }
+        .footer-rule svg rect:nth-of-type(10) { animation-range: entry 44% entry 98%; }
+    }
+}
+
+/* El punto de "abierto ahora" respira. Único elemento realmente vivo de la
+   página, y no depende del scroll. */
+@media (prefers-reduced-motion: no-preference) {
+    .open-now.is-open::before {
+        animation: breathe 3.2s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50%      { opacity: .45; transform: scale(.82); }
+    }
+}
+
+/* Al imprimir no hay scroll: se fuerza el estado final. */
+@media print {
+    .hero-title,
+    .hero-subtitle,
+    .hero-content .btn,
+    .pullquote-text,
+    .section-title,
+    .title-md,
+    .eyebrow,
+    .footer-mark {
+        opacity: 1;
+        -webkit-mask-image: none;
+        mask-image: none;
+        animation: none;
+    }
+
+    .value-symbol svg > *,
+    .footer-rule svg rect,
+    .gallery-grid img,
+    .about-media img,
+    .hero-media img {
+        animation: none;
+        stroke-dashoffset: 0;
+        transform: none;
     }
 }

@@ -50,6 +50,13 @@ const dict = {
         readLess: "Leer menos",
         authorRegular: "Cliente habitual",
 
+        igInitial: "e",
+        igRest: "n el día a día",
+        igLede: "Talleres, eventos y trabajos recientes. Lo contamos todo en Instagram.",
+        igConsentText: "Para ver las publicaciones aquí hay que cargar contenido de Instagram, que instala sus propias cookies.",
+        igAccept: "Cargar Instagram",
+        igOpen: "Verlo en Instagram",
+
         galleryInitial: "n",
         galleryRest: "uestras creaciones",
         footerLegal: "© 2026 Área 9 Peluquería · Calle de la Palma 78, Madrid"
@@ -101,6 +108,13 @@ const dict = {
         readMore: "Read more",
         readLess: "Read less",
         authorRegular: "Regular client",
+
+        igInitial: "d",
+        igRest: "ay to day",
+        igLede: "Workshops, events and recent work. We post it all on Instagram.",
+        igConsentText: "Showing the posts here means loading content from Instagram, which sets its own cookies.",
+        igAccept: "Load Instagram",
+        igOpen: "Open on Instagram",
 
         galleryInitial: "o",
         galleryRest: "ur creations",

@@ -9,10 +9,14 @@
         content="Área 9. Peluquería creativa en el centro de Madrid. Un espacio intuitivo donde la belleza se encuentra con la paz personal.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <link rel="preload" href="assets/fonts/balmoral-a9.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/balmoral-a9-wide.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-italic.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="css/styles.css?v=2.0.0">
+    <link rel="stylesheet" href="css/styles.css?v=2.1.0">
+
+    <!-- En el head y sin defer: la clase debe estar antes del primer pintado
+         para que el barrido no arranque a medias. -->
+    <script src="js/intro.js?v=1.0.0"></script>
 </head>
 
 <body>
@@ -278,6 +282,39 @@
                             place for years and keep coming back when I'm in Madrid. If you're looking for a
                             fashionable, good taste haircut that's the address.</p>
                         <p class="review-author">Google Review</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             Instagram — sustituye a una sección de eventos propia.
+             Diana ya publica ahí sus talleres: el sitio hereda ese hábito
+             en vez de crearle uno nuevo, y nada se queda desactualizado.
+
+             El iframe sólo se inyecta tras el consentimiento (js/instagram.js).
+             Sin aceptar, se ve el enlace directo y nada más.
+             ================================================================= -->
+        <section class="section instagram" id="instagram">
+            <div class="container">
+                <h2 class="display title-md">
+                    <span class="ti" data-i18n="igInitial">e</span><span data-i18n="igRest">n el día a
+                        día</span>
+                </h2>
+                <p class="lede ig-lede" data-i18n="igLede">Talleres, eventos y trabajos recientes. Lo
+                    contamos todo en Instagram.</p>
+
+                <div class="ig-frame" id="igFrame" data-handle="area_9peluqueria">
+                    <div class="ig-consent" id="igConsent">
+                        <p data-i18n="igConsentText">Para ver las publicaciones aquí hay que cargar
+                            contenido de Instagram, que instala sus propias cookies.</p>
+                        <div class="ig-consent-actions">
+                            <button type="button" class="btn btn-sm" id="igAccept"
+                                data-i18n="igAccept">Cargar Instagram</button>
+                            <a class="link-underline" href="https://www.instagram.com/area_9peluqueria/"
+                                target="_blank" rel="noopener noreferrer" data-i18n="igOpen">Verlo en
+                                Instagram</a>
+                        </div>
                     </div>
                 </div>
             </div>
