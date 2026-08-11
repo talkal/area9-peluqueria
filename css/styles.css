@@ -780,10 +780,13 @@ p + p {
 
 /* Rejilla propia: Behold da los datos, el diseño es nuestro. Sin marcos ni
    sombras, igual que la galería. */
+/* Columnas explícitas, no auto-fit. Con minmax(220px) en un móvil de 375px
+   sólo cabía UNA columna: seis fotos en vertical, unos 2000px de scroll para
+   una sección secundaria. */
 .ig-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-    gap: clamp(10px, 1.4vw, 18px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(8px, 1.4vw, 18px);
 }
 
 .ig-item {
@@ -969,6 +972,12 @@ p + p {
     /* Ya es flex desde 1024px: grid-template-columns aquí no haría nada. */
     .values-grid {
         row-gap: var(--sp-4);
+    }
+
+    /* Dos columnas en móvil: tres quedan diminutas, una ocupa media pantalla
+       por foto. Seis fotos en 3 filas es una sección, no un scroll aparte. */
+    .ig-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .schedule li {
