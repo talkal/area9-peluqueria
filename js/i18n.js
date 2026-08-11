@@ -30,8 +30,7 @@ const dict = {
 
         scheduleInitial: "h",
         scheduleRest: "orarios",
-        dayMon: "Lunes y miércoles",
-        dayTue: "Martes y jueves",
+        dayMonThu: "Lunes a jueves",
         dayFri: "Viernes",
         daySatSun: "Sábados y domingos",
         closed: "Cerrado",
@@ -87,8 +86,7 @@ const dict = {
 
         scheduleInitial: "o",
         scheduleRest: "pening hours",
-        dayMon: "Monday & Wednesday",
-        dayTue: "Tuesday & Thursday",
+        dayMonThu: "Monday to Thursday",
         dayFri: "Friday",
         daySatSun: "Saturday & Sunday",
         closed: "Closed",
@@ -124,11 +122,11 @@ const dict = {
  */
 const SCHEDULE = {
     0: [],                              // domingo
-    1: [[720, 840], [960, 1170]],       // lunes     12:00-14:00 · 16:00-19:30
-    2: [[600, 840], [960, 1170]],       // martes    10:00-14:00 · 16:00-19:30
-    3: [[720, 840], [960, 1170]],       // miércoles
-    4: [[600, 840], [960, 1170]],       // jueves
-    5: [[600, 840]],                    // viernes   10:00-14:00
+    1: [[660, 840], [930, 1140]],       // lunes     11:00-14:00 · 15:30-19:00
+    2: [[660, 840], [930, 1140]],       // martes
+    3: [[660, 840], [930, 1140]],       // miércoles
+    4: [[660, 840], [930, 1140]],       // jueves
+    5: [[660, 840]],                    // viernes   11:00-14:00
     6: []                               // sábado
 };
 

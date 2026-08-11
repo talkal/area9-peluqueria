@@ -814,8 +814,11 @@ p + p {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-    gap: clamp(16px, 2vw, 28px);
+    /* Columnas explícitas por lo mismo que la rejilla de Instagram: con
+       auto-fit y un mínimo en px, en móvil caía a una sola columna y cada
+       foto 3:4 ocupaba una pantalla entera. */
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(8px, 2vw, 28px);
     margin-top: var(--sp-5);
 }
 
@@ -976,7 +979,8 @@ p + p {
 
     /* Dos columnas en móvil: tres quedan diminutas, una ocupa media pantalla
        por foto. Seis fotos en 3 filas es una sección, no un scroll aparte. */
-    .ig-grid {
+    .ig-grid,
+    .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
